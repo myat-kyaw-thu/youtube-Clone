@@ -627,3 +627,5 @@ namespace GreenLifeOrganicStore.Services
     }
 }
 // commit 14: style: improve DataService readability
+
+// commit 22: fix: resolve issue in DataService
