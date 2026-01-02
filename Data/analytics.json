@@ -1,126 +1,65 @@
 {
-  "customerAnalytics": [
+  "PurchaseAnalyticss": [
     {
       "CustomerId": "cust-001",
-      "CustomerName": "John Doe",
-      "TotalOrders": 5,
-      "TotalSpent": 750.00,
-      "AverageOrderValue": 150.00,
-      "FavoriteCategory": "Fruits",
-      "LastPurchaseDate": "2024-01-14T16:45:00",
+      "CustomerName": "John",
+      "TotalOrders": 3,
+      "TotalSpent": 114.39,
+      "AverageOrderValue": 38.13,
+      "FavoriteCategory": "Pantry",
+      "LastPurchaseDate": "2026-04-30T12:19:50.782848+06:30",
       "PurchaseHistory": [
         {
-          "Date": "2024-01-10T14:30:00",
-          "Amount": 24.95,
-          "ProductCount": 3,
-          "Category": "Fruits"
-        },
-        {
-          "Date": "2024-01-05T10:00:00",
-          "Amount": 45.50,
-          "ProductCount": 5,
-          "Category": "Vegetables"
-        },
-        {
-          "Date": "2023-12-28T15:20:00",
-          "Amount": 32.00,
-          "ProductCount": 4,
-          "Category": "Dairy"
-        },
-        {
-          "Date": "2023-12-15T11:45:00",
-          "Amount": 67.55,
-          "ProductCount": 6,
+          "Date": "2026-04-30T10:49:11.4150152+06:30",
+          "Amount": 102.93,
+          "ProductCount": 7,
           "Category": "Pantry"
         },
         {
-          "Date": "2023-12-01T09:30:00",
-          "Amount": 80.00,
-          "ProductCount": 8,
+          "Date": "2026-04-30T11:42:56.4311663+06:30",
+          "Amount": 2.49,
+          "ProductCount": 1,
           "Category": "Fruits"
+        },
+        {
+          "Date": "2026-04-30T12:19:50.782848+06:30",
+          "Amount": 8.97,
+          "ProductCount": 3,
+          "Category": "Vegetables"
         }
       ]
     },
     {
       "CustomerId": "cust-002",
       "CustomerName": "Jane Smith",
-      "TotalOrders": 12,
-      "TotalSpent": 2500.00,
-      "AverageOrderValue": 208.33,
-      "FavoriteCategory": "Vegetables",
-      "LastPurchaseDate": "2024-01-12T09:15:00",
+      "TotalOrders": 1,
+      "TotalSpent": 7.47,
+      "AverageOrderValue": 7.47,
+      "FavoriteCategory": "Fruits",
+      "LastPurchaseDate": "2026-04-30T10:53:40.9477723+06:30",
       "PurchaseHistory": [
         {
-          "Date": "2024-01-12T09:15:00",
-          "Amount": 45.92,
-          "ProductCount": 4,
-          "Category": "Vegetables"
-        },
+          "Date": "2026-04-30T10:53:40.9477723+06:30",
+          "Amount": 7.47,
+          "ProductCount": 3,
+          "Category": "Fruits"
+        }
+      ]
+    },
+    {
+      "CustomerId": "903e8b57-170d-42c6-885e-1c5606966ff1",
+      "CustomerName": "Andrew",
+      "TotalOrders": 1,
+      "TotalSpent": 2.49,
+      "AverageOrderValue": 2.49,
+      "FavoriteCategory": "Fruits",
+      "LastPurchaseDate": "2026-04-30T12:22:26.8566525+06:30",
+      "PurchaseHistory": [
         {
-          "Date": "2024-01-08T14:00:00",
-          "Amount": 120.00,
-          "ProductCount": 8,
-          "Category": "Vegetables"
-        },
-        {
-          "Date": "2024-01-03T10:30:00",
-          "Amount": 85.50,
-          "ProductCount": 6,
-          "Category": "Pantry"
-        },
-        {
-          "Date": "2023-12-25T16:00:00",
-          "Amount": 200.00,
-          "ProductCount": 10,
-          "Category": "Dairy"
-        },
-        {
-          "Date": "2023-12-20T11:15:00",
-          "Amount": 95.00,
-          "ProductCount": 7,
-          "Category": "Beverages"
-        },
-        {
-          "Date": "2023-12-15T13:45:00",
-          "Amount": 150.00,
-          "ProductCount": 9,
-          "Category": "Vegetables"
-        },
-        {
-          "Date": "2023-12-10T09:00:00",
-          "Amount": 75.00,
-          "ProductCount": 5,
-          "Category": "Nuts"
-        },
-        {
-          "Date": "2023-12-05T15:30:00",
-          "Amount": 110.00,
-          "ProductCount": 7,
-          "Category": "Vegetables"
-        },
-        {
-          "Date": "2023-11-28T12:00:00",
-          "Amount": 180.00,
-          "ProductCount": 11,
-          "Category": "Pantry"
-        },
-        {
-          "Date": "2023-11-20T10:45:00",
-          "Amount": 95.58,
-          "ProductCount": 6,
-          "Category": "Dairy"
-        },
-        {
-          "Date": "2023-11-12T14:20:00",
-          "Amount": 143.00,
-          "ProductCount": 8,
-          "Category": "Vegetables"
-        },
-        {
-          "Date": "2023-11-05T11:30:00",
-          "Amount": 100.00,
-          "ProductCount": 6,
-          "Category": "Beverages"
+          "Date": "2026-04-30T12:22:26.8566525+06:30",
+          "Amount": 2.49,
+          "ProductCount": 1,
+          "Category": "Fruits"
         }
       ]
     }
