@@ -169,15 +169,21 @@ namespace GreenLifeOrganicStore.Services
         public List<Customer> GetAllCustomers()
         {
             var users = GetAllUsers();
+            var analytics = GetAllAnalytics();
             var customers = new List<Customer>();
+            
             foreach (var u in users)
             {
+                Customer customer = null;
+                
                 if (u is Customer c)
-                    customers.Add(c);
+                {
+                    customer = c;
+                }
                 else if (u.UserType == "Customer")
                 {
                     // Convert User to Customer
-                    customers.Add(new Customer
+                    customer = new Customer
                     {
                         Id = u.Id,
                         Username = u.Username,
@@ -190,7 +196,31 @@ namespace GreenLifeOrganicStore.Services
                         RegistrationDate = u.RegistrationDate,
                         LastLogin = u.LastLogin,
                         IsActive = u.IsActive
-                    });
+                    };
+                }
+                
+                if (customer != null)
+                {
+                    // ALWAYS merge analytics data to get live TotalOrders and TotalSpent
+                    var analytic = analytics.FirstOrDefault(a => a.CustomerId == customer.Id);
+                    if (analytic != null)
+                    {
+                        customer.TotalOrders = analytic.TotalOrders;
+                        customer.TotalSpent = analytic.TotalSpent;
+                        customer.PreferredCategory = analytic.FavoriteCategory;
+                        // Update loyalty tier based on actual spending
+                        customer.UpdateLoyaltyTier();
+                    }
+                    else
+                    {
+                        // No analytics data - set defaults
+                        customer.TotalOrders = 0;
+                        customer.TotalSpent = 0;
+                        customer.PreferredCategory = "";
+                        customer.LoyaltyTier = "Bronze";
+                    }
+                    
+                    customers.Add(customer);
                 }
             }
             return customers;
@@ -420,6 +450,124 @@ namespace GreenLifeOrganicStore.Services
 
             analytics.AddPurchase(DateTime.Now, orderAmount, productCount, category);
             SaveAnalytics(analytics);
+            
+            // Sync the customer data in users.json with the updated analytics
+            SyncCustomerFromAnalytics(customerId);
+        }
+        
+        /// <summary>
+        /// Syncs a customer's TotalOrders, TotalSpent, and LoyaltyTier from analytics.json to users.json
+        /// </summary>
+        public void SyncCustomerFromAnalytics(string customerId)
+        {
+            var users = GetAllUsers();
+            var analytic = GetAnalyticsByCustomerId(customerId);
+            
+            if (analytic == null) return;
+            
+            int index = users.FindIndex(u => u.Id == customerId);
+            if (index >= 0 && users[index].UserType == "Customer")
+            {
+                Customer customer;
+                if (users[index] is Customer c)
+                {
+                    customer = c;
+                }
+                else
+                {
+                    // Convert to Customer if it's just a User
+                    var u = users[index];
+                    customer = new Customer
+                    {
+                        Id = u.Id,
+                        Username = u.Username,
+                        PasswordHash = u.PasswordHash,
+                        Email = u.Email,
+                        FullName = u.FullName,
+                        Phone = u.Phone,
+                        Address = u.Address,
+                        UserType = u.UserType,
+                        RegistrationDate = u.RegistrationDate,
+                        LastLogin = u.LastLogin,
+                        IsActive = u.IsActive
+                    };
+                }
+                
+                // Update from analytics
+                customer.TotalOrders = analytic.TotalOrders;
+                customer.TotalSpent = analytic.TotalSpent;
+                customer.PreferredCategory = analytic.FavoriteCategory;
+                customer.UpdateLoyaltyTier();
+                
+                users[index] = customer;
+                SaveData(UsersFile, users);
+            }
+        }
+        
+        /// <summary>
+        /// Syncs all customers' data from analytics.json to users.json
+        /// </summary>
+        public void SyncAllCustomersFromAnalytics()
+        {
+            var users = GetAllUsers();
+            var analytics = GetAllAnalytics();
+            bool changed = false;
+            
+            for (int i = 0; i < users.Count; i++)
+            {
+                if (users[i].UserType == "Customer")
+                {
+                    var analytic = analytics.FirstOrDefault(a => a.CustomerId == users[i].Id);
+                    
+                    Customer customer;
+                    if (users[i] is Customer c)
+                    {
+                        customer = c;
+                    }
+                    else
+                    {
+                        // Convert to Customer if it's just a User
+                        var u = users[i];
+                        customer = new Customer
+                        {
+                            Id = u.Id,
+                            Username = u.Username,
+                            PasswordHash = u.PasswordHash,
+                            Email = u.Email,
+                            FullName = u.FullName,
+                            Phone = u.Phone,
+                            Address = u.Address,
+                            UserType = u.UserType,
+                            RegistrationDate = u.RegistrationDate,
+                            LastLogin = u.LastLogin,
+                            IsActive = u.IsActive
+                        };
+                    }
+                    
+                    if (analytic != null)
+                    {
+                        customer.TotalOrders = analytic.TotalOrders;
+                        customer.TotalSpent = analytic.TotalSpent;
+                        customer.PreferredCategory = analytic.FavoriteCategory;
+                        customer.UpdateLoyaltyTier();
+                    }
+                    else
+                    {
+                        customer.TotalOrders = 0;
+                        customer.TotalSpent = 0;
+                        customer.PreferredCategory = "";
+                        customer.LoyaltyTier = "Bronze";
+                    }
+                    
+                    users[i] = customer;
+                    changed = true;
+                }
+            }
+            
+            if (changed)
+            {
+                SaveData(UsersFile, users);
+            }
         }
 
         #endregion
