@@ -274,8 +274,8 @@ namespace GreenLifeOrganicStore.Forms
             topBar.Controls.Add(cmbCat,    2, 0);
             topBar.Controls.Add(btnSearch, 3, 0);
 
-            // Product grid
-            var dgv = MakeGrid("dgvBrowse");
+            // Product grid with image column
+            var dgv = MakeGridWithImages("dgvBrowse");
             dgv.DataSource = _dataService.GetActiveProducts();
 
             // Bottom bar: Add to Cart button
@@ -465,37 +465,60 @@ namespace GreenLifeOrganicStore.Forms
             // Title
             _secCart.Controls.Add(SectionTitle("Shopping Cart"));
 
-            // Cart grid — shows product name, qty, unit price, subtotal
-            _dgvCart = new DataGridView
-            {
-                Dock                  = DockStyle.Fill,
-                Name                  = "dgvCart",
-                BackgroundColor       = Surface,
-                BorderStyle           = BorderStyle.None,
-                ReadOnly              = true,
-                SelectionMode         = DataGridViewSelectionMode.FullRowSelect,
-                MultiSelect           = false,
-                AllowUserToAddRows    = false,
-                AllowUserToDeleteRows = false,
-                RowHeadersVisible     = false,
-                GridColor             = Color.FromArgb(230, 230, 230),
-                Font                  = new Font("Segoe UI", 10),
-                ColumnHeadersHeight   = 34,
-                AutoSizeColumnsMode   = DataGridViewAutoSizeColumnsMode.Fill
-            };
-            _dgvCart.ColumnHeadersDefaultCellStyle.BackColor  = Color.FromArgb(245, 248, 246);
-            _dgvCart.ColumnHeadersDefaultCellStyle.Font       = new Font("Segoe UI", 10, FontStyle.Bold);
-            _dgvCart.ColumnHeadersDefaultCellStyle.ForeColor  = Color.FromArgb(60, 60, 60);
-            _dgvCart.EnableHeadersVisualStyles = false;
+            // Cart grid — shows checkbox, image, product name, qty, unit price, subtotal
+            _dgvCart = new DataGridView();
+            _dgvCart.Name = "dgvCart";
+            _dgvCart.Dock = DockStyle.Fill;
+            _dgvCart.BackgroundColor = Surface;
+            _dgvCart.BorderStyle = BorderStyle.None;
+            _dgvCart.ReadOnly = false;
+            _dgvCart.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            _dgvCart.MultiSelect = true;
+            _dgvCart.AllowUserToAddRows = false;
+            _dgvCart.AllowUserToDeleteRows = false;
+            _dgvCart.RowHeadersVisible = false;
+            _dgvCart.GridColor = Color.FromArgb(230, 230, 230);
+            _dgvCart.Font = new Font("Segoe UI", 10);
+            _dgvCart.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            _dgvCart.RowTemplate.Height = 60;
+            
+            // Column header configuration - CRITICAL
+            _dgvCart.ColumnHeadersVisible = true;  // MUST be true
+            _dgvCart.ColumnHeadersHeight = 40;
+            _dgvCart.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            _dgvCart.EnableHeadersVisualStyles = false;  // MUST be false for custom colors
+            
+            // Style the column headers
+            _dgvCart.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(245, 248, 246);
+            _dgvCart.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            _dgvCart.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(60, 60, 60);
+            _dgvCart.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            
             _dgvCart.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(250, 253, 251);
 
             // Define columns manually so we control what shows
-            _dgvCart.Columns.Add(new DataGridViewTextBoxColumn { Name = "colName",     HeaderText = "Product",    FillWeight = 40 });
-            _dgvCart.Columns.Add(new DataGridViewTextBoxColumn { Name = "colQty",      HeaderText = "Qty",        FillWeight = 10 });
-            _dgvCart.Columns.Add(new DataGridViewTextBoxColumn { Name = "colUnit",     HeaderText = "Unit Price", FillWeight = 20 });
-            _dgvCart.Columns.Add(new DataGridViewTextBoxColumn { Name = "colSubtotal", HeaderText = "Subtotal",   FillWeight = 20 });
+            var colCheck = new DataGridViewCheckBoxColumn 
+            { 
+                Name = "colSelect", 
+                HeaderText = "Select", 
+                FillWeight = 8,
+                ReadOnly = false
+            };
+            var colImage = new DataGridViewImageColumn 
+            { 
+                Name = "colImage", 
+                HeaderText = "Image", 
+                FillWeight = 12,
+                ImageLayout = DataGridViewImageCellLayout.Zoom
+            };
+            _dgvCart.Columns.Add(colCheck);
+            _dgvCart.Columns.Add(colImage);
+            _dgvCart.Columns.Add(new DataGridViewTextBoxColumn { Name = "colName",     HeaderText = "Product",    FillWeight = 35, ReadOnly = true });
+            _dgvCart.Columns.Add(new DataGridViewTextBoxColumn { Name = "colQty",      HeaderText = "Qty",        FillWeight = 10, ReadOnly = true });
+            _dgvCart.Columns.Add(new DataGridViewTextBoxColumn { Name = "colUnit",     HeaderText = "Unit Price", FillWeight = 15, ReadOnly = true });
+            _dgvCart.Columns.Add(new DataGridViewTextBoxColumn { Name = "colSubtotal", HeaderText = "Subtotal",   FillWeight = 15, ReadOnly = true });
 
-            // Bottom bar: total | remove | checkout
+            // Bottom bar: total | remove | checkout selected
             var bottomBar = new TableLayoutPanel
             {
                 Dock        = DockStyle.Bottom,
@@ -507,7 +530,7 @@ namespace GreenLifeOrganicStore.Forms
             };
             bottomBar.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
             bottomBar.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 170));
-            bottomBar.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 140));
+            bottomBar.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 180));
 
             _lblCartTotal = new Label
             {
@@ -534,7 +557,7 @@ namespace GreenLifeOrganicStore.Forms
 
             var btnCheckout = new Button
             {
-                Text      = "Checkout →",
+                Text      = "Checkout Selected →",
                 Dock      = DockStyle.Fill,
                 BackColor = Green,
                 ForeColor = Color.White,
@@ -563,7 +586,12 @@ namespace GreenLifeOrganicStore.Forms
             decimal total = 0;
             foreach (var ci in _cartItems)
             {
-                _dgvCart.Rows.Add(
+                // Load product image
+                Image img = LoadProductImage(ci.Product.ImageUrl);
+                
+                var rowIndex = _dgvCart.Rows.Add(
+                    false,  // checkbox unchecked by default
+                    img,
                     ci.Product.Name,
                     ci.Qty,
                     $"${ci.Product.Price:F2}",
@@ -575,14 +603,34 @@ namespace GreenLifeOrganicStore.Forms
 
         private void RemoveFromCart()
         {
-            if (_dgvCart.SelectedRows.Count == 0) return;
-            int idx = _dgvCart.SelectedRows[0].Index;
-            if (idx >= 0 && idx < _cartItems.Count)
+            // Remove all selected (checked) items
+            var itemsToRemove = new List<int>();
+            for (int i = 0; i < _dgvCart.Rows.Count; i++)
             {
-                _cartItems.RemoveAt(idx);
-                RefreshCartGrid();
-                UpdateCartBadge();
+                var checkCell = _dgvCart.Rows[i].Cells["colSelect"] as DataGridViewCheckBoxCell;
+                if (checkCell != null && checkCell.Value != null && (bool)checkCell.Value)
+                {
+                    itemsToRemove.Add(i);
+                }
             }
+
+            if (itemsToRemove.Count == 0)
+            {
+                MessageBox.Show("Please select items to remove by checking the boxes.", "No Selection",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // Remove in reverse order to maintain indices
+            itemsToRemove.Reverse();
+            foreach (int idx in itemsToRemove)
+            {
+                if (idx >= 0 && idx < _cartItems.Count)
+                    _cartItems.RemoveAt(idx);
+            }
+
+            RefreshCartGrid();
+            UpdateCartBadge();
         }
 
         private void UpdateCartBadge()
@@ -602,10 +650,29 @@ namespace GreenLifeOrganicStore.Forms
                 return;
             }
 
+            // Get selected items (checked checkboxes)
+            var selectedItems = new List<CartItem>();
+            for (int i = 0; i < _dgvCart.Rows.Count; i++)
+            {
+                var checkCell = _dgvCart.Rows[i].Cells["colSelect"] as DataGridViewCheckBoxCell;
+                if (checkCell != null && checkCell.Value != null && (bool)checkCell.Value)
+                {
+                    if (i < _cartItems.Count)
+                        selectedItems.Add(_cartItems[i]);
+                }
+            }
+
+            if (selectedItems.Count == 0)
+            {
+                MessageBox.Show("Please select items to checkout by checking the boxes.", "No Selection",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             var user = _authService.GetCurrentUser();
             var order = new Order(user.Id, user.FullName, user.Address);
 
-            foreach (var ci in _cartItems)
+            foreach (var ci in selectedItems)
             {
                 order.AddItem(new OrderItem(ci.Product.Id, ci.Product.Name, ci.Qty, ci.Product.Price));
 
@@ -634,9 +701,12 @@ namespace GreenLifeOrganicStore.Forms
             _dataService.UpdateCustomerAnalytics(
                 user.Id, user.FullName, order.TotalAmount,
                 order.GetTotalItemCount(),
-                _cartItems.Count > 0 ? _cartItems[0].Product.Category : "");
+                selectedItems.Count > 0 ? selectedItems[0].Product.Category : "");
 
-            _cartItems.Clear();
+            // Remove checked out items from cart
+            foreach (var ci in selectedItems)
+                _cartItems.Remove(ci);
+
             RefreshCartGrid();
             UpdateCartBadge();
 
@@ -656,9 +726,46 @@ namespace GreenLifeOrganicStore.Forms
         {
             _secOrders = Section();
             _secOrders.Controls.Add(SectionTitle("My Orders"));
-            var dgv = MakeGrid("dgvMyOrders");
+            
+            // Create DataGridView with minimal configuration first
+            var dgv = new DataGridView();
+            dgv.Name = "dgvMyOrders";
+            dgv.Dock = DockStyle.Fill;
+            dgv.BackgroundColor = Surface;
+            dgv.BorderStyle = BorderStyle.None;
+            dgv.ReadOnly = true;
+            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgv.MultiSelect = false;
+            dgv.AllowUserToAddRows = false;
+            dgv.AllowUserToDeleteRows = false;
+            dgv.RowHeadersVisible = false;
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv.GridColor = Color.FromArgb(230, 230, 230);
+            dgv.Font = new Font("Segoe UI", 9.5f);
+            
+            // Column header configuration - CRITICAL SECTION
+            dgv.ColumnHeadersVisible = true;  // MUST be true
+            dgv.ColumnHeadersHeight = 40;
+            dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgv.EnableHeadersVisualStyles = false;  // MUST be false for custom colors
+            
+            // Style the column headers
+            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(245, 248, 246);
+            dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10f, FontStyle.Bold);
+            dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(60, 60, 60);
+            dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dgv.ColumnHeadersDefaultCellStyle.Padding = new Padding(5, 0, 0, 0);
+            
+            // Style alternating rows
+            dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(250, 253, 251);
+            
+            // Set data source
             var user = _authService.GetCurrentUser();
             dgv.DataSource = _dataService.GetOrdersByCustomerId(user?.Id ?? "");
+            
+            // Refresh to ensure headers show
+            dgv.Refresh();
+            
             _secOrders.Controls.Add(dgv);
             _content.Controls.Add(_secOrders);
         }
@@ -666,7 +773,6 @@ namespace GreenLifeOrganicStore.Forms
         private void BuildProfileSection()
         {
             _secProfile = Section();
-            _secProfile.Controls.Add(SectionTitle("My Profile"));
 
             var user     = _authService.GetCurrentUser();
             var customer = user as Customer;
@@ -724,7 +830,10 @@ namespace GreenLifeOrganicStore.Forms
 
             card.Controls.Add(info);
             card.Controls.Add(btnEdit);
+            
+            // Add card first, then title (reverse order for Dock.Top)
             _secProfile.Controls.Add(card);
+            _secProfile.Controls.Add(SectionTitle("My Profile"));
             _content.Controls.Add(_secProfile);
         }
 
@@ -785,6 +894,7 @@ namespace GreenLifeOrganicStore.Forms
             {
                 if (c is DataGridView dgv && dgv.Name == "dgvMyOrders")
                 {
+                    dgv.DataSource = null;  // Clear first
                     dgv.DataSource = _dataService.GetOrdersByCustomerId(user?.Id ?? "");
                     break;
                 }
@@ -856,6 +966,134 @@ namespace GreenLifeOrganicStore.Forms
             dgv.EnableHeadersVisualStyles = false;
             dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(250, 253, 251);
             return dgv;
+        }
+
+        private DataGridView MakeGridWithImages(string name)
+        {
+            var dgv = new DataGridView
+            {
+                Name                  = name,
+                Dock                  = DockStyle.Fill,
+                AutoSizeColumnsMode   = DataGridViewAutoSizeColumnsMode.Fill,
+                BackgroundColor       = Surface,
+                BorderStyle           = BorderStyle.None,
+                ReadOnly              = true,
+                SelectionMode         = DataGridViewSelectionMode.FullRowSelect,
+                MultiSelect           = false,
+                AllowUserToAddRows    = false,
+                AllowUserToDeleteRows = false,
+                RowHeadersVisible     = false,
+                GridColor             = Color.FromArgb(230, 230, 230),
+                Font                  = new Font("Segoe UI", 9.5f),
+                ColumnHeadersHeight   = 34,
+                RowTemplate           = { Height = 60 },
+                ScrollBars            = ScrollBars.Both  // Explicitly enable scrollbars
+            };
+            dgv.ColumnHeadersDefaultCellStyle.BackColor  = Color.FromArgb(245, 248, 246);
+            dgv.ColumnHeadersDefaultCellStyle.Font       = new Font("Segoe UI", 9.5f, FontStyle.Bold);
+            dgv.ColumnHeadersDefaultCellStyle.ForeColor  = Color.FromArgb(60, 60, 60);
+            dgv.EnableHeadersVisualStyles = false;
+            dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(250, 253, 251);
+            
+            // Add image column
+            dgv.AutoGenerateColumns = false;
+            var imgCol = new DataGridViewImageColumn
+            {
+                Name = "colProductImage",
+                HeaderText = "Image",
+                ImageLayout = DataGridViewImageCellLayout.Zoom,
+                Width = 70
+            };
+            dgv.Columns.Add(imgCol);
+            
+            // Add other columns
+            dgv.Columns.Add(new DataGridViewTextBoxColumn { Name = "colProductName", HeaderText = "Name", DataPropertyName = "Name" });
+            dgv.Columns.Add(new DataGridViewTextBoxColumn { Name = "colCategory", HeaderText = "Category", DataPropertyName = "Category" });
+            dgv.Columns.Add(new DataGridViewTextBoxColumn { Name = "colPrice", HeaderText = "Price", DataPropertyName = "Price" });
+            dgv.Columns.Add(new DataGridViewTextBoxColumn { Name = "colStock", HeaderText = "Stock", DataPropertyName = "Stock" });
+            dgv.Columns.Add(new DataGridViewTextBoxColumn { Name = "colDescription", HeaderText = "Description", DataPropertyName = "Description" });
+            
+            // Handle cell formatting to load images
+            dgv.CellFormatting += (s, e) =>
+            {
+                if (e.ColumnIndex == 0 && e.RowIndex >= 0) // Image column
+                {
+                    var product = dgv.Rows[e.RowIndex].DataBoundItem as Product;
+                    if (product != null)
+                    {
+                        e.Value = LoadProductImage(product.ImageUrl);
+                    }
+                }
+            };
+            
+            return dgv;
+        }
+
+        private Image LoadProductImage(string imageUrl)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(imageUrl))
+                    return CreatePlaceholderImage();
+
+                // Admin saves paths as "Resources\\Images\\product_xxx.jpg"
+                // Customer dashboard runs from bin/Debug/, so we need to go up one level to bin/
+                // Prepend "..\\" to the path to navigate from bin/Debug/ to bin/
+                string adjustedPath = "..\\" + imageUrl;
+
+                // Try multiple possible paths
+                string[] possiblePaths = new[]
+                {
+                    // Path 1: Adjusted path (bin/Debug/ + ..\ + Resources\Images\)
+                    System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, adjustedPath),
+                    
+                    // Path 2: Direct from base directory
+                    System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, imageUrl),
+                    
+                    // Path 3: From parent of base directory
+                    System.IO.Path.Combine(System.IO.Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).FullName, imageUrl),
+                    
+                    // Path 4: Direct path if it's absolute
+                    imageUrl
+                };
+
+                foreach (var path in possiblePaths)
+                {
+                    if (System.IO.File.Exists(path))
+                    {
+                        // Load image from file
+                        using (var fs = new System.IO.FileStream(path, System.IO.FileMode.Open, System.IO.FileAccess.Read))
+                        {
+                            return Image.FromStream(fs);
+                        }
+                    }
+                }
+                
+                // If no path worked, return placeholder
+                return CreatePlaceholderImage();
+            }
+            catch
+            {
+                return CreatePlaceholderImage();
+            }
+        }
+
+        private Image CreatePlaceholderImage()
+        {
+            // Create a simple placeholder image
+            var bmp = new Bitmap(60, 60);
+            using (var g = Graphics.FromImage(bmp))
+            {
+                g.Clear(Color.FromArgb(220, 220, 220));
+                using (var brush = new SolidBrush(Color.FromArgb(150, 150, 150)))
+                using (var font = new Font("Segoe UI", 8))
+                {
+                    var text = "No\nImage";
+                    var sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center };
+                    g.DrawString(text, font, brush, new RectangleF(0, 0, 60, 60), sf);
+                }
+            }
+            return bmp;
         }
     }
 }

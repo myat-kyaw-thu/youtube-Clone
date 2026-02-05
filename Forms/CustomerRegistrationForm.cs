@@ -6,7 +6,7 @@ using GreenLifeOrganicStore.Services;
 namespace GreenLifeOrganicStore.Forms
 {
     /// <summary>
-    /// Customer Registration — centered card, fluid, no fixed clipping.
+    /// Customer Registration — Same pattern as LoginForm for reliability
     /// </summary>
     public class CustomerRegistrationForm : Form
     {
@@ -16,6 +16,12 @@ namespace GreenLifeOrganicStore.Forms
                         _txtEmail, _txtFullName, _txtPhone, _txtAddress;
         private Label   _lblError;
         private Button  _btnRegister, _btnCancel;
+
+        // Card dimensions
+        private const int CardW  = 440;
+        private const int CardH  = 640;
+        private const int Pad    = 36;
+        private const int FieldW = CardW - Pad * 2;  // 368
 
         private static readonly Color Green    = Color.FromArgb(34, 139, 34);
         private static readonly Color GreenDark = Color.FromArgb(24, 110, 24);
@@ -29,174 +35,163 @@ namespace GreenLifeOrganicStore.Forms
 
         private void InitializeComponent()
         {
-            this.Text = "Register — GreenLife Organic Store";
-            this.MinimumSize = new Size(480, 640);
-            this.Size = new Size(500, 700);
-            this.StartPosition = FormStartPosition.CenterScreen;
+            this.Text            = "Register — GreenLife Organic Store";
+            this.MinimumSize     = new Size(500, 720);
+            this.Size            = new Size(520, 760);
+            this.StartPosition   = FormStartPosition.CenterScreen;
             this.FormBorderStyle = FormBorderStyle.Sizable;
-            this.MaximizeBox = false;
-            this.BackColor = BgPage;
-            this.Resize += (s, e) => CenterCard();
+            this.MaximizeBox     = false;
+            this.BackColor       = BgPage;
+            this.Resize         += (s, e) => PositionCard();
 
             // ── Card ──────────────────────────────────────────────────────────
             var card = new Panel
             {
-                Size = new Size(420, 600),
+                Size      = new Size(CardW, CardH),
                 BackColor = Color.White
             };
             card.Paint += (s, e) =>
             {
-                using (var pen = new Pen(Color.FromArgb(210, 210, 210)))
+                using (var pen = new Pen(Color.FromArgb(200, 200, 200)))
                     e.Graphics.DrawRectangle(pen, 0, 0, card.Width - 1, card.Height - 1);
+                using (var b = new SolidBrush(Green))
+                    e.Graphics.FillRectangle(b, 0, card.Height - 4, card.Width, 4);
             };
             this.Controls.Add(card);
 
-            // ── Header band ───────────────────────────────────────────────────
+            // ── Green header ──────────────────────────────────────────────────
             var header = new Panel
             {
-                Dock = DockStyle.Top,
-                Height = 72,
+                Location  = new Point(0, 0),
+                Size      = new Size(CardW, 90),
                 BackColor = Green
             };
             var lblTitle = new Label
             {
-                Text = "Create Account",
-                Font = new Font("Segoe UI", 20, FontStyle.Bold),
+                Text      = "Create Account",
+                Font      = new Font("Segoe UI", 22, FontStyle.Bold),
                 ForeColor = Color.White,
-                Dock = DockStyle.Fill,
-                TextAlign = ContentAlignment.MiddleCenter
+                AutoSize  = true
             };
             header.Controls.Add(lblTitle);
+            header.Resize += (s, e) =>
+                lblTitle.Location = new Point((header.Width - lblTitle.Width) / 2, 28);
             card.Controls.Add(header);
 
-            // ── Scrollable body ───────────────────────────────────────────────
-            var scroll = new Panel
-            {
-                Dock = DockStyle.Fill,
-                AutoScroll = true,
-                BackColor = Color.White,
-                Padding = new Padding(32, 16, 32, 16)
-            };
+            // ── Fields — start below header ───────────────────────────────────
+            int y = 110;
 
-            var body = new TableLayoutPanel
-            {
-                Dock = DockStyle.Top,
-                AutoSize = true,
-                ColumnCount = 1,
-                BackColor = Color.White,
-                Padding = new Padding(0)
-            };
-
-            // Field rows
-            string[] labels = { "Username", "Password", "Confirm Password",
-                                 "Email", "Full Name", "Phone", "Address" };
-            var boxes = new TextBox[labels.Length];
-
-            for (int i = 0; i < labels.Length; i++)
-            {
-                body.RowStyles.Add(new RowStyle(SizeType.Absolute, 20));  // label
-                body.RowStyles.Add(new RowStyle(SizeType.Absolute, 36));  // input
-                body.RowStyles.Add(new RowStyle(SizeType.Absolute, 10));  // gap
-
-                var lbl = new Label
-                {
-                    Text = labels[i],
-                    Font = new Font("Segoe UI", 9.5f),
-                    ForeColor = Color.FromArgb(70, 70, 70),
-                    Dock = DockStyle.Fill,
-                    TextAlign = ContentAlignment.BottomLeft
-                };
-                var txt = new TextBox
-                {
-                    Dock = DockStyle.Fill,
-                    Font = new Font("Segoe UI", 10.5f),
-                    BorderStyle = BorderStyle.FixedSingle
-                };
-                if (labels[i].Contains("Password"))
-                    txt.UseSystemPasswordChar = true;
-
-                boxes[i] = txt;
-                int row = i * 3;
-                body.RowCount = row + 3;
-                body.Controls.Add(lbl, 0, row);
-                body.Controls.Add(txt, 0, row + 1);
-                body.Controls.Add(new Panel { Dock = DockStyle.Fill, BackColor = Color.White }, 0, row + 2);
-            }
-
-            _txtUsername        = boxes[0];
-            _txtPassword        = boxes[1];
-            _txtConfirmPassword = boxes[2];
-            _txtEmail           = boxes[3];
-            _txtFullName        = boxes[4];
-            _txtPhone           = boxes[5];
-            _txtAddress         = boxes[6];
+            // Username
+            AddField(card, "Username", ref _txtUsername, ref y, false);
+            
+            // Password
+            AddField(card, "Password", ref _txtPassword, ref y, true);
+            
+            // Confirm Password
+            AddField(card, "Confirm Password", ref _txtConfirmPassword, ref y, true);
+            
+            // Email
+            AddField(card, "Email", ref _txtEmail, ref y, false);
+            
+            // Full Name
+            AddField(card, "Full Name", ref _txtFullName, ref y, false);
+            
+            // Phone
+            AddField(card, "Phone", ref _txtPhone, ref y, false);
+            
+            // Address
+            AddField(card, "Address", ref _txtAddress, ref y, false);
 
             // Error label
             _lblError = new Label
             {
-                Text = "",
-                Font = new Font("Segoe UI", 9),
+                Text      = "",
+                Font      = new Font("Segoe UI", 9),
                 ForeColor = Color.FromArgb(192, 57, 43),
-                Dock = DockStyle.Fill,
-                AutoSize = false,
-                Height = 20
+                Location  = new Point(Pad, y),
+                Size      = new Size(FieldW, 24),
+                TextAlign = ContentAlignment.MiddleLeft
             };
-            body.RowStyles.Add(new RowStyle(SizeType.Absolute, 22));
-            body.RowCount++;
-            body.Controls.Add(_lblError, 0, labels.Length * 3);
+            card.Controls.Add(_lblError);
+            y += 28;
 
-            // Buttons
+            // Register button
             _btnRegister = new Button
             {
-                Text = "Register",
-                Dock = DockStyle.Fill,
-                Height = 42,
+                Text      = "Register",
+                Location  = new Point(Pad, y),
+                Size      = new Size(FieldW, 44),
                 BackColor = Green,
                 ForeColor = Color.White,
                 FlatStyle = FlatStyle.Flat,
-                Font = new Font("Segoe UI", 11, FontStyle.Bold),
-                Cursor = Cursors.Hand
+                Font      = new Font("Segoe UI", 12, FontStyle.Bold),
+                Cursor    = Cursors.Hand
             };
             _btnRegister.FlatAppearance.BorderSize = 0;
             _btnRegister.Click += BtnRegister_Click;
+            card.Controls.Add(_btnRegister);
+            y += 50;
 
+            // Cancel button
             _btnCancel = new Button
             {
-                Text = "Cancel",
-                Dock = DockStyle.Fill,
-                Height = 38,
+                Text      = "Cancel",
+                Location  = new Point(Pad, y),
+                Size      = new Size(FieldW, 38),
                 BackColor = Color.FromArgb(150, 150, 150),
                 ForeColor = Color.White,
                 FlatStyle = FlatStyle.Flat,
-                Font = new Font("Segoe UI", 10),
-                Cursor = Cursors.Hand
+                Font      = new Font("Segoe UI", 10),
+                Cursor    = Cursors.Hand
             };
             _btnCancel.FlatAppearance.BorderSize = 0;
             _btnCancel.Click += (s, e) => this.Close();
+            card.Controls.Add(_btnCancel);
 
-            int btnRow = labels.Length * 3 + 1;
-            body.RowStyles.Add(new RowStyle(SizeType.Absolute, 46));
-            body.RowStyles.Add(new RowStyle(SizeType.Absolute, 42));
-            body.RowCount += 2;
-            body.Controls.Add(_btnRegister, 0, btnRow);
-            body.Controls.Add(_btnCancel,   0, btnRow + 1);
-
-            scroll.Controls.Add(body);
-            card.Controls.Add(scroll);
-
-            this.Load += (s, e) => CenterCard();
             this.AcceptButton = _btnRegister;
+            this.Load += (s, e) =>
+            {
+                PositionCard();
+                header.Width = header.Width;  // trigger label centering
+            };
         }
 
-        private Panel _card => this.Controls.Count > 0 ? this.Controls[0] as Panel : null;
-
-        private void CenterCard()
+        private void AddField(Panel parent, string labelText, ref TextBox textBox, ref int y, bool isPassword)
         {
-            var card = _card;
+            parent.Controls.Add(new Label
+            {
+                Text      = labelText,
+                Font      = new Font("Segoe UI", 9.5f),
+                ForeColor = Color.FromArgb(70, 70, 70),
+                Location  = new Point(Pad, y),
+                Size      = new Size(FieldW, 18)
+            });
+            y += 20;
+
+            textBox = new TextBox
+            {
+                Location    = new Point(Pad, y),
+                Size        = new Size(FieldW, 28),
+                Font        = new Font("Segoe UI", 11),
+                BorderStyle = BorderStyle.FixedSingle
+            };
+            if (isPassword)
+                textBox.UseSystemPasswordChar = true;
+            
+            parent.Controls.Add(textBox);
+            y += 36;
+        }
+
+        private void PositionCard()
+        {
+            Panel card = null;
+            foreach (Control c in this.Controls)
+                if (c is Panel p) { card = p; break; }
             if (card == null) return;
+
             card.Location = new Point(
-                Math.Max(0, (this.ClientSize.Width  - card.Width)  / 2),
-                Math.Max(0, (this.ClientSize.Height - card.Height) / 2));
+                (this.ClientSize.Width  - card.Width)  / 2,
+                Math.Max(16, (this.ClientSize.Height - card.Height - 20) / 2));
         }
 
         private void BtnRegister_Click(object sender, EventArgs e)
