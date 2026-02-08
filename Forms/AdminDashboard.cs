@@ -48,9 +48,7 @@ namespace GreenLifeOrganicStore.Forms
         // ── Customer management fields ────────────────────────────────────────
         private DataGridView _cDgv;
         private Label        _cLblSelected;
-        private TextBox      _cTxtEmail, _cTxtPhone, _cTxtAddress;
-        private ComboBox     _cCmbTier;
-        private Button       _cBtnSave, _cBtnToggleActive, _cBtnResetPw;
+        private Button       _cBtnToggleActive, _cBtnResetPw;
         private Label        _cLblStatus;
         private DataGridView _oDgv;
         private ComboBox     _oCmbStatus;
@@ -818,81 +816,45 @@ namespace GreenLifeOrganicStore.Forms
                     e.Graphics.FillRectangle(b, 0, 0, 4, editCard.Height);
             };
 
-            // Edit layout: info label | fields | action buttons
+            // Edit layout: info label | action buttons only
             var editLayout = new TableLayoutPanel
             {
                 Dock = DockStyle.Fill, RowCount = 2, ColumnCount = 1, BackColor = Surface
             };
             editLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 26)); // selected info
-            editLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 100)); // fields row
+            editLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 100)); // buttons row
 
             _cLblSelected = new Label
             {
-                Text = "Select a customer from the grid above to view and edit their details.",
+                Text = "Select a customer from the grid above to view their details.",
                 Font = new Font("Segoe UI", 9), ForeColor = Color.FromArgb(100, 100, 100),
                 Dock = DockStyle.Fill, TextAlign = ContentAlignment.MiddleLeft
             };
             editLayout.Controls.Add(_cLblSelected, 0, 0);
 
-            // Fields + buttons row
-            var fieldsRow = new TableLayoutPanel
+            // Action buttons row (only 2 buttons: Toggle Active + Reset Password)
+            var buttonsRow = new TableLayoutPanel
             {
-                Dock = DockStyle.Fill, ColumnCount = 7, RowCount = 1, BackColor = Surface
+                Dock = DockStyle.Fill, ColumnCount = 3, RowCount = 1, BackColor = Surface
             };
-            fieldsRow.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 22));  // email
-            fieldsRow.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14));  // phone
-            fieldsRow.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 22));  // address
-            fieldsRow.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 110)); // tier combo
-            fieldsRow.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 110)); // save btn
-            fieldsRow.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 110)); // toggle active
-            fieldsRow.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 120)); // reset pw
+            buttonsRow.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100)); // spacer
+            buttonsRow.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 160)); // toggle active (wider)
+            buttonsRow.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 180)); // reset pw (wider)
 
-            // Email field
-            var emailGrp = CEditField("Email", out _cTxtEmail);
-            // Phone field
-            var phoneGrp = CEditField("Phone", out _cTxtPhone);
-            // Address field
-            var addrGrp = CEditField("Address", out _cTxtAddress);
-
-            // Loyalty tier combo
-            var tierGrp = new TableLayoutPanel
-            {
-                Dock = DockStyle.Fill, ColumnCount = 1, RowCount = 2, BackColor = Surface,
-                Padding = new Padding(4, 2, 4, 2)
-            };
-            tierGrp.RowStyles.Add(new RowStyle(SizeType.Absolute, 18));
-            tierGrp.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
-            tierGrp.Controls.Add(new Label { Text = "Loyalty Tier", Font = new Font("Segoe UI", 9), ForeColor = Color.FromArgb(80, 80, 80), Dock = DockStyle.Fill }, 0, 0);
-            _cCmbTier = new ComboBox { Dock = DockStyle.Fill, DropDownStyle = ComboBoxStyle.DropDownList, Font = new Font("Segoe UI", 10) };
-            _cCmbTier.Items.AddRange(new[] { "Bronze", "Silver", "Gold" });
-            _cCmbTier.SelectedIndex = 0;
-            tierGrp.Controls.Add(_cCmbTier, 0, 1);
-
-            // Status label (shown after save)
+            // Status label (shown after actions)
             _cLblStatus = new Label
             {
                 Text = "", Font = new Font("Segoe UI", 8.5f), ForeColor = Green,
                 Dock = DockStyle.Bottom, Height = 16, TextAlign = ContentAlignment.MiddleLeft
             };
 
-            // Save button
-            _cBtnSave = new Button
-            {
-                Text = "✔ Save", Dock = DockStyle.Fill,
-                BackColor = Green, ForeColor = Color.White, FlatStyle = FlatStyle.Flat,
-                Font = new Font("Segoe UI", 9f, FontStyle.Bold), Cursor = Cursors.Hand,
-                Margin = new Padding(4, 18, 4, 4)
-            };
-            _cBtnSave.FlatAppearance.BorderSize = 0;
-            _cBtnSave.Click += CBtnSave_Click;
-
             // Toggle active button
             _cBtnToggleActive = new Button
             {
                 Text = "⊘ Deactivate", Dock = DockStyle.Fill,
                 BackColor = Color.FromArgb(230, 126, 34), ForeColor = Color.White,
-                FlatStyle = FlatStyle.Flat, Font = new Font("Segoe UI", 9f),
-                Cursor = Cursors.Hand, Margin = new Padding(4, 18, 4, 4)
+                FlatStyle = FlatStyle.Flat, Font = new Font("Segoe UI", 10f, FontStyle.Bold),
+                Cursor = Cursors.Hand, Margin = new Padding(4, 20, 4, 4), Height = 40
             };
             _cBtnToggleActive.FlatAppearance.BorderSize = 0;
             _cBtnToggleActive.Click += CBtnToggleActive_Click;
@@ -900,23 +862,19 @@ namespace GreenLifeOrganicStore.Forms
             // Reset password button
             _cBtnResetPw = new Button
             {
-                Text = "🔑 Reset Pw", Dock = DockStyle.Fill,
+                Text = "🔑 Reset Password", Dock = DockStyle.Fill,
                 BackColor = Color.FromArgb(142, 68, 173), ForeColor = Color.White,
-                FlatStyle = FlatStyle.Flat, Font = new Font("Segoe UI", 9f),
-                Cursor = Cursors.Hand, Margin = new Padding(4, 18, 4, 4)
+                FlatStyle = FlatStyle.Flat, Font = new Font("Segoe UI", 10f, FontStyle.Bold),
+                Cursor = Cursors.Hand, Margin = new Padding(4, 20, 4, 4), Height = 40
             };
             _cBtnResetPw.FlatAppearance.BorderSize = 0;
             _cBtnResetPw.Click += CBtnResetPw_Click;
 
-            fieldsRow.Controls.Add(emailGrp,         0, 0);
-            fieldsRow.Controls.Add(phoneGrp,         1, 0);
-            fieldsRow.Controls.Add(addrGrp,          2, 0);
-            fieldsRow.Controls.Add(tierGrp,          3, 0);
-            fieldsRow.Controls.Add(_cBtnSave,        4, 0);
-            fieldsRow.Controls.Add(_cBtnToggleActive,5, 0);
-            fieldsRow.Controls.Add(_cBtnResetPw,     6, 0);
+            buttonsRow.Controls.Add(new Panel { Dock = DockStyle.Fill }, 0, 0); // spacer
+            buttonsRow.Controls.Add(_cBtnToggleActive, 1, 0);
+            buttonsRow.Controls.Add(_cBtnResetPw,      2, 0);
 
-            editLayout.Controls.Add(fieldsRow, 0, 1);
+            editLayout.Controls.Add(buttonsRow, 0, 1);
             editCard.Controls.Add(_cLblStatus);
             editCard.Controls.Add(editLayout);
 
@@ -927,22 +885,6 @@ namespace GreenLifeOrganicStore.Forms
         }
 
         // ── Customer field helper ─────────────────────────────────────────────
-        private static TableLayoutPanel CEditField(string label, out TextBox box)
-        {
-            var tbl = new TableLayoutPanel
-            {
-                Dock = DockStyle.Fill, ColumnCount = 1, RowCount = 2, BackColor = Color.White,
-                Padding = new Padding(4, 2, 4, 2)
-            };
-            tbl.RowStyles.Add(new RowStyle(SizeType.Absolute, 18));
-            tbl.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
-            tbl.Controls.Add(new Label { Text = label, Font = new Font("Segoe UI", 9), ForeColor = Color.FromArgb(80, 80, 80), Dock = DockStyle.Fill }, 0, 0);
-            var txt = new TextBox { Dock = DockStyle.Fill, Font = new Font("Segoe UI", 10), BorderStyle = BorderStyle.FixedSingle };
-            tbl.Controls.Add(txt, 0, 1);
-            box = txt;
-            return tbl;
-        }
-
         // ── Customer grid selection ───────────────────────────────────────────
         private void CDgvSelectionChanged(object sender, EventArgs e)
         {
@@ -959,15 +901,6 @@ namespace GreenLifeOrganicStore.Forms
                 ? Color.FromArgb(40, 40, 40)
                 : Color.FromArgb(192, 57, 43);
 
-            _cTxtEmail.Text   = customer.Email   ?? "";
-            _cTxtPhone.Text   = customer.Phone   ?? "";
-            _cTxtAddress.Text = customer.Address ?? "";
-
-            // Set tier combo
-            for (int i = 0; i < _cCmbTier.Items.Count; i++)
-                if (_cCmbTier.Items[i].ToString() == customer.LoyaltyTier)
-                { _cCmbTier.SelectedIndex = i; break; }
-
             // Update toggle button label
             _cBtnToggleActive.Text      = customer.IsActive ? "⊘ Deactivate" : "✔ Activate";
             _cBtnToggleActive.BackColor = customer.IsActive
@@ -975,30 +908,6 @@ namespace GreenLifeOrganicStore.Forms
                 : Color.FromArgb(39, 174, 96);
 
             _cLblStatus.Text = "";
-        }
-
-        // ── Save editable fields ──────────────────────────────────────────────
-        private void CBtnSave_Click(object sender, EventArgs e)
-        {
-            if (_cDgv.SelectedRows.Count == 0)
-            { _cLblStatus.Text = "Select a customer first."; _cLblStatus.ForeColor = Danger; return; }
-
-            var customer = _cDgv.SelectedRows[0].DataBoundItem as Customer;
-            if (customer == null) return;
-
-            customer.Email        = _cTxtEmail.Text.Trim();
-            customer.Phone        = _cTxtPhone.Text.Trim();
-            customer.Address      = _cTxtAddress.Text.Trim();
-            customer.LoyaltyTier  = _cCmbTier.SelectedItem?.ToString() ?? customer.LoyaltyTier;
-
-            _dataService.UpdateUser(customer);
-
-            // Refresh grid
-            _cDgv.DataSource = null;
-            _cDgv.DataSource = _dataService.GetAllCustomers();
-
-            _cLblStatus.Text      = $"✔  {customer.FullName} updated successfully.";
-            _cLblStatus.ForeColor = Green;
         }
 
         // ── Toggle active/inactive ────────────────────────────────────────────
@@ -1343,6 +1252,77 @@ namespace GreenLifeOrganicStore.Forms
                 }
             }
         }
+        
+        /// <summary>
+        /// Copies the selected image to Resources/Images folder and returns the relative path
+        /// </summary>
+        private string CopyImageToResources(string sourceImagePath, string productId)
+        {
+            if (string.IsNullOrWhiteSpace(sourceImagePath) || !File.Exists(sourceImagePath))
+                return null;
+                
+            try
+            {
+                // Get the file extension
+                string extension = Path.GetExtension(sourceImagePath);
+                
+                // Get the project root directory (go up from bin/Debug to project root)
+                string projectRoot = AppDomain.CurrentDomain.BaseDirectory;
+                // Navigate up from bin\Debug\ to project root
+                projectRoot = Directory.GetParent(projectRoot).Parent.FullName;
+                
+                // Create the Resources/Images folder path in the actual project directory
+                string imagesFolder = Path.Combine(projectRoot, "Resources", "Images");
+                if (!Directory.Exists(imagesFolder))
+                    Directory.CreateDirectory(imagesFolder);
+                
+                // Create new filename: product_{productId}.{extension}
+                string newFileName = $"product_{productId}{extension}";
+                string destinationPath = Path.Combine(imagesFolder, newFileName);
+                
+                // Copy the file (overwrite if exists)
+                File.Copy(sourceImagePath, destinationPath, true);
+                
+                // Return relative path from project root
+                return Path.Combine("Resources", "Images", newFileName);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error copying image: {ex.Message}", "Image Error", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Resolves a relative image path to full path (handles both relative and absolute paths)
+        /// </summary>
+        private string ResolveImagePath(string imagePath)
+        {
+            if (string.IsNullOrWhiteSpace(imagePath))
+                return null;
+                
+            // If it's already an absolute path and exists, return it
+            if (Path.IsPathRooted(imagePath) && File.Exists(imagePath))
+                return imagePath;
+                
+            // If it's a relative path, resolve it from project root
+            try
+            {
+                // Get project root (go up from bin/Debug)
+                string projectRoot = AppDomain.CurrentDomain.BaseDirectory;
+                projectRoot = Directory.GetParent(projectRoot).Parent.FullName;
+                
+                // Combine with relative path
+                string fullPath = Path.Combine(projectRoot, imagePath);
+                
+                if (File.Exists(fullPath))
+                    return fullPath;
+            }
+            catch { }
+            
+            return null;
+        }
 
         private void PDgvSelectionChanged(object sender, EventArgs e)
         {
@@ -1372,8 +1352,10 @@ namespace GreenLifeOrganicStore.Forms
                 _pCmbCategory.SelectedItem = p.Category;
             else { _pCmbCategory.Items.Add(p.Category); _pCmbCategory.SelectedItem = p.Category; }
 
-            if (!string.IsNullOrEmpty(p.ImageUrl) && File.Exists(p.ImageUrl))
-            { try { _pPicPreview.Image = Image.FromFile(p.ImageUrl); } catch { _pPicPreview.Image = null; } }
+            // Load image preview - resolve relative path to full path
+            string fullImagePath = ResolveImagePath(p.ImageUrl);
+            if (fullImagePath != null)
+            { try { _pPicPreview.Image = Image.FromFile(fullImagePath); } catch { _pPicPreview.Image = null; } }
             else _pPicPreview.Image = null;
         }
 
@@ -1447,15 +1429,45 @@ namespace GreenLifeOrganicStore.Forms
         {
             // Preserve original DateAdded when updating an existing product
             DateTime dateAdded = DateTime.Now;
+            string existingImageUrl = null;
             if (id != null)
             {
                 var existing = _dataService.GetProductById(id);
-                if (existing != null) dateAdded = existing.DateAdded;
+                if (existing != null)
+                {
+                    dateAdded = existing.DateAdded;
+                    existingImageUrl = existing.ImageUrl;
+                }
+            }
+            
+            // Generate product ID if new
+            string productId = id ?? Guid.NewGuid().ToString();
+            
+            // Handle image: copy to Resources/Images if a new image was selected
+            string imageUrl = existingImageUrl; // default to existing
+            if (!string.IsNullOrWhiteSpace(_pTxtImagePath.Text))
+            {
+                // Check if this is a new external image (not already in Resources/Images)
+                if (!_pTxtImagePath.Text.Contains("Resources\\Images") && 
+                    !_pTxtImagePath.Text.Contains("Resources/Images"))
+                {
+                    // Copy the image to Resources/Images
+                    string copiedPath = CopyImageToResources(_pTxtImagePath.Text, productId);
+                    if (copiedPath != null)
+                        imageUrl = copiedPath;
+                    else
+                        imageUrl = _pTxtImagePath.Text; // fallback to original path if copy failed
+                }
+                else
+                {
+                    // Already in Resources/Images, use as-is
+                    imageUrl = _pTxtImagePath.Text;
+                }
             }
 
             return new Product
             {
-                Id                = id ?? Guid.NewGuid().ToString(),
+                Id                = productId,
                 Name              = _pTxtName.Text.Trim(),
                 Category          = _pCmbCategory.SelectedItem.ToString(),
                 Price             = decimal.TryParse(_pTxtPrice.Text, out var pr) ? pr : 0,
@@ -1466,7 +1478,7 @@ namespace GreenLifeOrganicStore.Forms
                 LowStockThreshold = int.TryParse(_pTxtLowStock.Text, out var ls) ? ls : 10,
                 ExpiryDate        = _pDtpExpiry.Value,
                 IsActive          = _pChkActive.Checked,
-                ImageUrl          = _pTxtImagePath.Text.Trim(),   // saved to JSON
+                ImageUrl          = imageUrl,   // relative path in Resources/Images
                 DateAdded         = dateAdded
             };
         }
@@ -1535,6 +1547,9 @@ namespace GreenLifeOrganicStore.Forms
 
         private void LoadDashboardData()
         {
+            // Sync all customer data from analytics.json to users.json first
+            _dataService.SyncAllCustomersFromAnalytics();
+            
             var products  = _dataService.GetAllProducts();
             var orders    = _dataService.GetAllOrders();
             var customers = _dataService.GetAllCustomers();
@@ -1629,6 +1644,11 @@ namespace GreenLifeOrganicStore.Forms
                 $"Total Orders: {r.TotalOrders}   |   Revenue: ${r.TotalRevenue:N2}   |   Avg Order: ${r.AverageOrderValue:N2}\r\n" +
                 $"By Status:{sb}";
 
+            // Clear existing data and columns
+            _rDgvMain.DataSource = null;
+            _rDgvMain.Columns.Clear();
+            _rDgvMain.Rows.Clear();
+
             var dt = new System.Data.DataTable();
             dt.Columns.Add("Order ID");
             dt.Columns.Add("Customer");
@@ -1641,8 +1661,6 @@ namespace GreenLifeOrganicStore.Forms
                     o.OrderDate.ToString("yyyy-MM-dd HH:mm"),
                     o.TotalAmount.ToString("F2"),
                     o.GetTotalItemCount(), o.Status);
-            _rDgvMain.DataSource = null;
-            _rDgvMain.Columns.Clear();
             _rDgvMain.DataSource = dt;
         }
 
@@ -1691,6 +1709,11 @@ namespace GreenLifeOrganicStore.Forms
                 $"Total: {r.TotalCustomers}   |   Active: {r.ActiveCustomers}   |   Revenue: ${r.TotalRevenue:N2}   |   Avg Value: ${r.AverageCustomerValue:N2}\r\n" +
                 $"By Tier:{sb}";
 
+            // Clear existing data and columns
+            _rDgvMain.DataSource = null;
+            _rDgvMain.Columns.Clear();
+            _rDgvMain.Rows.Clear();
+
             var dt = new System.Data.DataTable();
             dt.Columns.Add("Customer");
             dt.Columns.Add("Orders");
@@ -1702,8 +1725,6 @@ namespace GreenLifeOrganicStore.Forms
                 dt.Rows.Add(a.CustomerName, a.TotalOrders,
                     a.TotalSpent.ToString("N2"), a.AverageOrderValue.ToString("N2"),
                     a.FavoriteCategory, a.LastPurchaseDate.ToString("yyyy-MM-dd"));
-            _rDgvMain.DataSource = null;
-            _rDgvMain.Columns.Clear();
             _rDgvMain.DataSource = dt;
         }
 
