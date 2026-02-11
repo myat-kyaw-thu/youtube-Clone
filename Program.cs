@@ -26,3 +26,5 @@ namespace GreenLifeOrganicStore
 // commit 36: chore: update Program
 
 // commit 44: feat: add Program functionality
+
+// commit 52: style: clean up Program
