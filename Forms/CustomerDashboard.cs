@@ -1101,3 +1101,5 @@ namespace GreenLifeOrganicStore.Forms
 // commit 15: feat: add CustomerDashboard functionality
 
 // commit 23: style: improve CustomerDashboard readability
+
+// commit 31: fix: address problem in CustomerDashboard
