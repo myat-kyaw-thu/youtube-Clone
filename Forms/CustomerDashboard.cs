@@ -1097,3 +1097,5 @@ namespace GreenLifeOrganicStore.Forms
         }
     }
 }
+
+// commit 15: feat: add CustomerDashboard functionality
