@@ -1849,3 +1849,5 @@ namespace GreenLifeOrganicStore.Forms
         }
     }
 }
+
+// commit 17: docs: document AdminDashboard
