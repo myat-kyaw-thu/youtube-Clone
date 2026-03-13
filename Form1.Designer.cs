@@ -38,3 +38,5 @@
     }
 }
 
+
+// commit 18: docs: document Form1.Designer
