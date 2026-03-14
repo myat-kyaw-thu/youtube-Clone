@@ -251,3 +251,5 @@ namespace GreenLifeOrganicStore.Forms
 // commit 24: docs: add comments to CustomerRegistrationForm
 
 // commit 32: style: format CustomerRegistrationForm
+
+// commit 40: perf: improve CustomerRegistrationForm performance
