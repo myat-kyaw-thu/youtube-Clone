@@ -1855,3 +1855,5 @@ namespace GreenLifeOrganicStore.Forms
 // commit 25: refactor: simplify AdminDashboard logic
 
 // commit 33: fix: address problem in AdminDashboard
+
+// commit 41: refactor: optimize AdminDashboard
