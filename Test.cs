@@ -18,3 +18,5 @@ class Test {
         }
     }
 }
+
+// commit 21: refactor: improve Test structure
