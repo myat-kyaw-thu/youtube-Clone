@@ -158,3 +158,5 @@ class Test {
 // micro-commit 300: fix: resolve null-reference in Test
 
 // micro-commit 304: chore: format Test file
+
+// micro-commit 308: test: cover edge cases in Test
