@@ -158,3 +158,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 299: fix: correct validation logic in Program
 
 // micro-commit 303: test: add unit tests for Program
+
+// micro-commit 307: docs: add XML comments to Program
