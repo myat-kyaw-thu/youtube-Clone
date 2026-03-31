@@ -176,3 +176,5 @@
 // micro-commit 293: chore: minor whitespace fix in Form1.Designer
 
 // micro-commit 297: docs: add XML comments to Form1.Designer
+
+// micro-commit 301: test: add unit tests for Form1.Designer
