@@ -154,3 +154,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 290: docs: update README for Form1
 
 // micro-commit 294: chore: add missing newline in Form1
+
+// micro-commit 298: refactor: clean up Form1
