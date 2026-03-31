@@ -152,3 +152,5 @@ class Test {
 // micro-commit 288: docs: add usage example for Test
 
 // micro-commit 292: docs: add XML comments to Test
+
+// micro-commit 296: chore: format Test file
