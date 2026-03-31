@@ -156,3 +156,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 295: style: enforce naming conventions in Program
 
 // micro-commit 299: fix: correct validation logic in Program
+
+// micro-commit 303: test: add unit tests for Program
