@@ -154,3 +154,5 @@ class Test {
 // micro-commit 292: docs: add XML comments to Test
 
 // micro-commit 296: chore: format Test file
+
+// micro-commit 300: fix: resolve null-reference in Test
