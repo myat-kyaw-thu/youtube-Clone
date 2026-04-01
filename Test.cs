@@ -150,3 +150,5 @@ class Test {
 // micro-commit 284: chore: add missing newline in Test
 
 // micro-commit 288: docs: add usage example for Test
+
+// micro-commit 292: docs: add XML comments to Test
