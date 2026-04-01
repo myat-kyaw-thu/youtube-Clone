@@ -148,3 +148,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 278: docs: update README for Form1
 
 // micro-commit 282: docs: add XML comments to Form1
+
+// micro-commit 286: style: apply consistent indentation in Form1
