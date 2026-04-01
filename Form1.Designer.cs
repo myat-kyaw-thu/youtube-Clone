@@ -170,3 +170,5 @@
 // micro-commit 281: style: apply consistent indentation in Form1.Designer
 
 // micro-commit 285: docs: add usage example for Form1.Designer
+
+// micro-commit 289: refactor: simplify Form1.Designer logic
