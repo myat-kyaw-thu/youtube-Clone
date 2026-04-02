@@ -146,3 +146,5 @@ class Test {
 // micro-commit 276: chore: format Test file
 
 // micro-commit 280: docs: add usage example for Test
+
+// micro-commit 284: chore: add missing newline in Test
