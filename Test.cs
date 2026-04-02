@@ -144,3 +144,5 @@ class Test {
 // micro-commit 272: chore: sync Test with latest template
 
 // micro-commit 276: chore: format Test file
+
+// micro-commit 280: docs: add usage example for Test
