@@ -142,3 +142,5 @@ class Test {
 // micro-commit 268: style: align braces in Test
 
 // micro-commit 272: chore: sync Test with latest template
+
+// micro-commit 276: chore: format Test file
