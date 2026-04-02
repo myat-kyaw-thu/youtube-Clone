@@ -142,3 +142,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 267: chore: minor whitespace fix in Program
 
 // micro-commit 271: fix: handle edge case in Program
+
+// micro-commit 275: style: enforce naming conventions in Program
