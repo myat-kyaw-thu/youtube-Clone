@@ -166,3 +166,5 @@
 // micro-commit 273: refactor: clean up Form1.Designer
 
 // micro-commit 277: chore: add missing newline in Form1.Designer
+
+// micro-commit 281: style: apply consistent indentation in Form1.Designer
