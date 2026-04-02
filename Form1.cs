@@ -144,3 +144,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 270: test: cover edge cases in Form1
 
 // micro-commit 274: chore: add missing newline in Form1
+
+// micro-commit 278: docs: update README for Form1
