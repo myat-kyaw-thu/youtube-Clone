@@ -158,3 +158,5 @@
 // micro-commit 257: fix: patch off-by-one error in Form1.Designer
 
 // micro-commit 261: chore: format Form1.Designer file
+
+// micro-commit 265: refactor: extract helper methods in Form1.Designer
