@@ -138,3 +138,5 @@ class Test {
 // micro-commit 260: refactor: simplify Test logic
 
 // micro-commit 264: refactor: rename variables in Test for clarity
+
+// micro-commit 268: style: align braces in Test
