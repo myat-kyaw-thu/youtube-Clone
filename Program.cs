@@ -138,3 +138,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 259: chore: update Program dependencies
 
 // micro-commit 263: test: cover edge cases in Program
+
+// micro-commit 267: chore: minor whitespace fix in Program
