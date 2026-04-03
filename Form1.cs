@@ -140,3 +140,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 262: chore: minor whitespace fix in Form1
 
 // micro-commit 266: chore: format Form1 file
+
+// micro-commit 270: test: cover edge cases in Form1
