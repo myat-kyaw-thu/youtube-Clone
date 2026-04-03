@@ -142,3 +142,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 266: chore: format Form1 file
 
 // micro-commit 270: test: cover edge cases in Form1
+
+// micro-commit 274: chore: add missing newline in Form1
