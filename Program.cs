@@ -134,3 +134,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 251: refactor: extract helper methods in Program
 
 // micro-commit 255: docs: add usage example for Program
+
+// micro-commit 259: chore: update Program dependencies
