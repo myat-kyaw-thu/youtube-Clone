@@ -134,3 +134,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 250: refactor: remove dead code from Form1
 
 // micro-commit 254: refactor: extract helper methods in Form1
+
+// micro-commit 258: refactor: remove dead code from Form1
