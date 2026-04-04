@@ -132,3 +132,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 247: docs: document Program parameters
 
 // micro-commit 251: refactor: extract helper methods in Program
+
+// micro-commit 255: docs: add usage example for Program
