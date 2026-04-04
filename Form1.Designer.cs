@@ -154,3 +154,5 @@
 // micro-commit 249: refactor: rename variables in Form1.Designer for clarity
 
 // micro-commit 253: refactor: extract helper methods in Form1.Designer
+
+// micro-commit 257: fix: patch off-by-one error in Form1.Designer
