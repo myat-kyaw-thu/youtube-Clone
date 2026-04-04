@@ -132,3 +132,5 @@ class Test {
 // micro-commit 248: style: enforce naming conventions in Test
 
 // micro-commit 252: fix: resolve null-reference in Test
+
+// micro-commit 256: refactor: simplify Test logic
