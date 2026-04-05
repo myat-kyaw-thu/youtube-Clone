@@ -128,3 +128,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 239: docs: add XML comments to Program
 
 // micro-commit 243: style: apply consistent indentation in Program
+
+// micro-commit 247: docs: document Program parameters
