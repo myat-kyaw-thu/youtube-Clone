@@ -130,3 +130,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 243: style: apply consistent indentation in Program
 
 // micro-commit 247: docs: document Program parameters
+
+// micro-commit 251: refactor: extract helper methods in Program
