@@ -150,3 +150,5 @@
 // micro-commit 241: style: align braces in Form1.Designer
 
 // micro-commit 245: test: cover edge cases in Form1.Designer
+
+// micro-commit 249: refactor: rename variables in Form1.Designer for clarity
