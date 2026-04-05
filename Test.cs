@@ -128,3 +128,5 @@ class Test {
 // micro-commit 240: chore: add missing newline in Test
 
 // micro-commit 244: test: add unit tests for Test
+
+// micro-commit 248: style: enforce naming conventions in Test
