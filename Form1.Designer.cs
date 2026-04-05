@@ -152,3 +152,5 @@
 // micro-commit 245: test: cover edge cases in Form1.Designer
 
 // micro-commit 249: refactor: rename variables in Form1.Designer for clarity
+
+// micro-commit 253: refactor: extract helper methods in Form1.Designer
