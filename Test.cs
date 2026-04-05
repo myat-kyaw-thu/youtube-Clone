@@ -130,3 +130,5 @@ class Test {
 // micro-commit 244: test: add unit tests for Test
 
 // micro-commit 248: style: enforce naming conventions in Test
+
+// micro-commit 252: fix: resolve null-reference in Test
