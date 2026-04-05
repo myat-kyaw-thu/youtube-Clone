@@ -128,3 +128,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 238: docs: clarify Form1 description
 
 // micro-commit 242: chore: minor whitespace fix in Form1
+
+// micro-commit 246: style: apply consistent indentation in Form1
