@@ -124,3 +124,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 231: docs: add XML comments to Program
 
 // micro-commit 235: chore: format Program file
+
+// micro-commit 239: docs: add XML comments to Program
