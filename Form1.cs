@@ -124,3 +124,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 230: chore: update Form1 dependencies
 
 // micro-commit 234: docs: add usage example for Form1
+
+// micro-commit 238: docs: clarify Form1 description
