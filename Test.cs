@@ -124,3 +124,5 @@ class Test {
 // micro-commit 232: refactor: rename variables in Test for clarity
 
 // micro-commit 236: chore: sync Test with latest template
+
+// micro-commit 240: chore: add missing newline in Test
