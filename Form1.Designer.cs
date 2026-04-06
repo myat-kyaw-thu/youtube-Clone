@@ -146,3 +146,5 @@
 // micro-commit 233: docs: clarify Form1.Designer description
 
 // micro-commit 237: chore: sync Form1.Designer with latest template
+
+// micro-commit 241: style: align braces in Form1.Designer
