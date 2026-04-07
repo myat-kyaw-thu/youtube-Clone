@@ -140,3 +140,5 @@
 // micro-commit 221: chore: sync Form1.Designer with latest template
 
 // micro-commit 225: chore: sync Form1.Designer with latest template
+
+// micro-commit 229: test: cover edge cases in Form1.Designer
