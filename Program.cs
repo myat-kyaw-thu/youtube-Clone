@@ -120,3 +120,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 223: chore: format Program file
 
 // micro-commit 227: chore: minor whitespace fix in Program
+
+// micro-commit 231: docs: add XML comments to Program
