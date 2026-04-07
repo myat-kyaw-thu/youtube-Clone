@@ -118,3 +118,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 219: test: add unit tests for Program
 
 // micro-commit 223: chore: format Program file
+
+// micro-commit 227: chore: minor whitespace fix in Program
