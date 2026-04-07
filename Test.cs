@@ -118,3 +118,5 @@ class Test {
 // micro-commit 220: test: improve assertion messages in Test
 
 // micro-commit 224: chore: update Test dependencies
+
+// micro-commit 228: refactor: simplify Test logic
