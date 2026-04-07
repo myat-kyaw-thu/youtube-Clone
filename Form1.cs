@@ -122,3 +122,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 226: refactor: remove dead code from Form1
 
 // micro-commit 230: chore: update Form1 dependencies
+
+// micro-commit 234: docs: add usage example for Form1
