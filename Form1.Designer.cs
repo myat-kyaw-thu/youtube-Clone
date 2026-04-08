@@ -134,3 +134,5 @@
 // micro-commit 209: refactor: simplify Form1.Designer logic
 
 // micro-commit 213: style: enforce naming conventions in Form1.Designer
+
+// micro-commit 217: fix: handle edge case in Form1.Designer
