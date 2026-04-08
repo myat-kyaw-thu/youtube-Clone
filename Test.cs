@@ -112,3 +112,5 @@ class Test {
 // micro-commit 208: fix: correct validation logic in Test
 
 // micro-commit 212: docs: update README for Test
+
+// micro-commit 216: test: cover edge cases in Test
