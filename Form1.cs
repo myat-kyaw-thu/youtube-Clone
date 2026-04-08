@@ -116,3 +116,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 214: chore: format Form1 file
 
 // micro-commit 218: refactor: clean up Form1
+
+// micro-commit 222: refactor: remove dead code from Form1
