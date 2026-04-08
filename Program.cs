@@ -116,3 +116,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 215: style: apply consistent indentation in Program
 
 // micro-commit 219: test: add unit tests for Program
+
+// micro-commit 223: chore: format Program file
