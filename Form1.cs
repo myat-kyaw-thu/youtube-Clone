@@ -108,3 +108,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 198: fix: patch off-by-one error in Form1
 
 // micro-commit 202: test: add unit tests for Form1
+
+// micro-commit 206: refactor: clean up Form1
