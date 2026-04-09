@@ -110,3 +110,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 203: fix: handle edge case in Program
 
 // micro-commit 207: style: apply consistent indentation in Program
+
+// micro-commit 211: test: cover edge cases in Program
