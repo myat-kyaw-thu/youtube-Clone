@@ -112,3 +112,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 206: refactor: clean up Form1
 
 // micro-commit 210: refactor: simplify Form1 logic
+
+// micro-commit 214: chore: format Form1 file
