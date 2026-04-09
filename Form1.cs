@@ -110,3 +110,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 202: test: add unit tests for Form1
 
 // micro-commit 206: refactor: clean up Form1
+
+// micro-commit 210: refactor: simplify Form1 logic
