@@ -108,3 +108,5 @@ class Test {
 // micro-commit 200: chore: sync Test with latest template
 
 // micro-commit 204: test: add unit tests for Test
+
+// micro-commit 208: fix: correct validation logic in Test
