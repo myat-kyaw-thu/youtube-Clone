@@ -108,3 +108,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 199: refactor: extract helper methods in Program
 
 // micro-commit 203: fix: handle edge case in Program
+
+// micro-commit 207: style: apply consistent indentation in Program
