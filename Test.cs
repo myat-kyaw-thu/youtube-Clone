@@ -104,3 +104,5 @@ class Test {
 // micro-commit 192: style: reorder using directives in Test
 
 // micro-commit 196: docs: document Test parameters
+
+// micro-commit 200: chore: sync Test with latest template
