@@ -102,3 +102,5 @@ class Test {
 // micro-commit 188: test: cover edge cases in Test
 
 // micro-commit 192: style: reorder using directives in Test
+
+// micro-commit 196: docs: document Test parameters
