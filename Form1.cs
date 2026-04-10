@@ -106,3 +106,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 194: docs: document Form1 parameters
 
 // micro-commit 198: fix: patch off-by-one error in Form1
+
+// micro-commit 202: test: add unit tests for Form1
