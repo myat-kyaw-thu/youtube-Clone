@@ -124,3 +124,5 @@
 // micro-commit 189: style: apply consistent indentation in Form1.Designer
 
 // micro-commit 193: refactor: extract helper methods in Form1.Designer
+
+// micro-commit 197: test: add unit tests for Form1.Designer
