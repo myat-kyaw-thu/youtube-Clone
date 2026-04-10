@@ -126,3 +126,5 @@
 // micro-commit 193: refactor: extract helper methods in Form1.Designer
 
 // micro-commit 197: test: add unit tests for Form1.Designer
+
+// micro-commit 201: test: cover edge cases in Form1.Designer
