@@ -106,3 +106,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 195: test: add unit tests for Program
 
 // micro-commit 199: refactor: extract helper methods in Program
+
+// micro-commit 203: fix: handle edge case in Program
