@@ -104,3 +104,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 191: chore: minor whitespace fix in Program
 
 // micro-commit 195: test: add unit tests for Program
+
+// micro-commit 199: refactor: extract helper methods in Program
