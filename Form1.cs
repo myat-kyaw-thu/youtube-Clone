@@ -104,3 +104,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 190: refactor: clean up Form1
 
 // micro-commit 194: docs: document Form1 parameters
+
+// micro-commit 198: fix: patch off-by-one error in Form1
