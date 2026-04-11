@@ -100,3 +100,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 182: refactor: clean up Form1
 
 // micro-commit 186: style: align braces in Form1
+
+// micro-commit 190: refactor: clean up Form1
