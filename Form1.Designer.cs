@@ -120,3 +120,5 @@
 // micro-commit 181: style: align braces in Form1.Designer
 
 // micro-commit 185: fix: handle edge case in Form1.Designer
+
+// micro-commit 189: style: apply consistent indentation in Form1.Designer
