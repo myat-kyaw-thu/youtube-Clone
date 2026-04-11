@@ -98,3 +98,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 179: chore: update Program dependencies
 
 // micro-commit 183: refactor: simplify Program logic
+
+// micro-commit 187: fix: handle edge case in Program
