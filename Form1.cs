@@ -98,3 +98,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 178: refactor: extract helper methods in Form1
 
 // micro-commit 182: refactor: clean up Form1
+
+// micro-commit 186: style: align braces in Form1
