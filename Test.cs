@@ -92,3 +92,5 @@ class Test {
 // micro-commit 168: test: cover edge cases in Test
 
 // micro-commit 172: test: improve assertion messages in Test
+
+// micro-commit 176: test: cover edge cases in Test
