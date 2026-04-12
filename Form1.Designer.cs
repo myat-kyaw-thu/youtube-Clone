@@ -116,3 +116,5 @@
 // micro-commit 173: refactor: extract helper methods in Form1.Designer
 
 // micro-commit 177: fix: address crash on empty Form1.Designer
+
+// micro-commit 181: style: align braces in Form1.Designer
