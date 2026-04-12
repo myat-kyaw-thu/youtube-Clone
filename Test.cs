@@ -96,3 +96,5 @@ class Test {
 // micro-commit 176: test: cover edge cases in Test
 
 // micro-commit 180: docs: add usage example for Test
+
+// micro-commit 184: fix: correct validation logic in Test
