@@ -94,3 +94,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 170: chore: add missing newline in Form1
 
 // micro-commit 174: chore: sync Form1 with latest template
+
+// micro-commit 178: refactor: extract helper methods in Form1
