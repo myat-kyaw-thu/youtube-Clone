@@ -92,3 +92,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 167: fix: address crash on empty Program
 
 // micro-commit 171: chore: minor whitespace fix in Program
+
+// micro-commit 175: fix: handle edge case in Program
