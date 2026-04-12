@@ -96,3 +96,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 174: chore: sync Form1 with latest template
 
 // micro-commit 178: refactor: extract helper methods in Form1
+
+// micro-commit 182: refactor: clean up Form1
