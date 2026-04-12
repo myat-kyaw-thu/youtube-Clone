@@ -114,3 +114,5 @@
 // micro-commit 169: fix: address crash on empty Form1.Designer
 
 // micro-commit 173: refactor: extract helper methods in Form1.Designer
+
+// micro-commit 177: fix: address crash on empty Form1.Designer
