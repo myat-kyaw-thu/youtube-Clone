@@ -112,3 +112,5 @@
 // micro-commit 165: chore: sync Form1.Designer with latest template
 
 // micro-commit 169: fix: address crash on empty Form1.Designer
+
+// micro-commit 173: refactor: extract helper methods in Form1.Designer
