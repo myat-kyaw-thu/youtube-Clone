@@ -88,3 +88,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 158: style: enforce naming conventions in Form1
 
 // micro-commit 162: style: reorder using directives in Form1
+
+// micro-commit 166: fix: address crash on empty Form1
