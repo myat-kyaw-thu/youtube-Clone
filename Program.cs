@@ -90,3 +90,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 163: refactor: simplify Program logic
 
 // micro-commit 167: fix: address crash on empty Program
+
+// micro-commit 171: chore: minor whitespace fix in Program
