@@ -108,3 +108,5 @@
 // micro-commit 157: docs: document Form1.Designer parameters
 
 // micro-commit 161: style: reorder using directives in Form1.Designer
+
+// micro-commit 165: chore: sync Form1.Designer with latest template
