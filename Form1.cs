@@ -92,3 +92,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 166: fix: address crash on empty Form1
 
 // micro-commit 170: chore: add missing newline in Form1
+
+// micro-commit 174: chore: sync Form1 with latest template
