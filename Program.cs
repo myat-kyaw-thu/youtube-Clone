@@ -88,3 +88,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 159: chore: update Program dependencies
 
 // micro-commit 163: refactor: simplify Program logic
+
+// micro-commit 167: fix: address crash on empty Program
