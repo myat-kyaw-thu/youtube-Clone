@@ -82,3 +82,5 @@ class Test {
 // micro-commit 148: test: cover edge cases in Test
 
 // micro-commit 152: refactor: clean up Test
+
+// micro-commit 156: refactor: remove dead code from Test
