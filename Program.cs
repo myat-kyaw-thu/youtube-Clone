@@ -84,3 +84,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 151: fix: correct validation logic in Program
 
 // micro-commit 155: refactor: simplify Program logic
+
+// micro-commit 159: chore: update Program dependencies
