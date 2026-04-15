@@ -100,3 +100,5 @@
 // micro-commit 141: fix: address crash on empty Form1.Designer
 
 // micro-commit 145: fix: correct validation logic in Form1.Designer
+
+// micro-commit 149: test: add unit tests for Form1.Designer
