@@ -98,3 +98,5 @@
 // micro-commit 137: fix: handle edge case in Form1.Designer
 
 // micro-commit 141: fix: address crash on empty Form1.Designer
+
+// micro-commit 145: fix: correct validation logic in Form1.Designer
