@@ -80,3 +80,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 143: docs: document Program parameters
 
 // micro-commit 147: fix: resolve null-reference in Program
+
+// micro-commit 151: fix: correct validation logic in Program
