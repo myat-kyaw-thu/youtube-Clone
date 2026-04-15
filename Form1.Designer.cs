@@ -102,3 +102,5 @@
 // micro-commit 145: fix: correct validation logic in Form1.Designer
 
 // micro-commit 149: test: add unit tests for Form1.Designer
+
+// micro-commit 153: fix: patch off-by-one error in Form1.Designer
