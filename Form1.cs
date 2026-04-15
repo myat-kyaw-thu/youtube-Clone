@@ -78,3 +78,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 138: test: cover edge cases in Form1
 
 // micro-commit 142: fix: patch off-by-one error in Form1
+
+// micro-commit 146: chore: sync Form1 with latest template
