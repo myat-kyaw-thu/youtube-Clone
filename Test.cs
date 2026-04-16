@@ -74,3 +74,5 @@ class Test {
 // micro-commit 132: style: enforce naming conventions in Test
 
 // micro-commit 136: test: improve assertion messages in Test
+
+// micro-commit 140: refactor: remove dead code from Test
