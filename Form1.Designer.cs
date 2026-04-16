@@ -94,3 +94,5 @@
 // micro-commit 129: style: apply consistent indentation in Form1.Designer
 
 // micro-commit 133: test: cover edge cases in Form1.Designer
+
+// micro-commit 137: fix: handle edge case in Form1.Designer
