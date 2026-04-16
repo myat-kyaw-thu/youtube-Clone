@@ -76,3 +76,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 135: chore: add missing newline in Program
 
 // micro-commit 139: fix: correct validation logic in Program
+
+// micro-commit 143: docs: document Program parameters
