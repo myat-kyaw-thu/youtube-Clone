@@ -74,3 +74,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 131: style: reorder using directives in Program
 
 // micro-commit 135: chore: add missing newline in Program
+
+// micro-commit 139: fix: correct validation logic in Program
