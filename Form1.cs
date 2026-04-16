@@ -74,3 +74,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 130: refactor: remove dead code from Form1
 
 // micro-commit 134: docs: add XML comments to Form1
+
+// micro-commit 138: test: cover edge cases in Form1
