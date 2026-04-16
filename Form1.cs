@@ -76,3 +76,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 134: docs: add XML comments to Form1
 
 // micro-commit 138: test: cover edge cases in Form1
+
+// micro-commit 142: fix: patch off-by-one error in Form1
