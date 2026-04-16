@@ -76,3 +76,5 @@ class Test {
 // micro-commit 136: test: improve assertion messages in Test
 
 // micro-commit 140: refactor: remove dead code from Test
+
+// micro-commit 144: fix: handle edge case in Test
