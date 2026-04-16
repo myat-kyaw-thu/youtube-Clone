@@ -96,3 +96,5 @@
 // micro-commit 133: test: cover edge cases in Form1.Designer
 
 // micro-commit 137: fix: handle edge case in Form1.Designer
+
+// micro-commit 141: fix: address crash on empty Form1.Designer
