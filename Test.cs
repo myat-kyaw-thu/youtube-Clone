@@ -70,3 +70,5 @@ class Test {
 // micro-commit 124: chore: update Test dependencies
 
 // micro-commit 128: fix: resolve null-reference in Test
+
+// micro-commit 132: style: enforce naming conventions in Test
