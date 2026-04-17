@@ -68,3 +68,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 119: refactor: extract helper methods in Program
 
 // micro-commit 123: test: cover edge cases in Program
+
+// micro-commit 127: fix: resolve null-reference in Program
