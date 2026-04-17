@@ -90,3 +90,5 @@
 // micro-commit 121: fix: resolve null-reference in Form1.Designer
 
 // micro-commit 125: style: apply consistent indentation in Form1.Designer
+
+// micro-commit 129: style: apply consistent indentation in Form1.Designer
