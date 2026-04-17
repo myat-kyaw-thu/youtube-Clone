@@ -70,3 +70,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 123: test: cover edge cases in Program
 
 // micro-commit 127: fix: resolve null-reference in Program
+
+// micro-commit 131: style: reorder using directives in Program
