@@ -68,3 +68,5 @@ class Test {
 // micro-commit 120: fix: handle edge case in Test
 
 // micro-commit 124: chore: update Test dependencies
+
+// micro-commit 128: fix: resolve null-reference in Test
