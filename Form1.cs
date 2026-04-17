@@ -70,3 +70,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 122: docs: add usage example for Form1
 
 // micro-commit 126: chore: sync Form1 with latest template
+
+// micro-commit 130: refactor: remove dead code from Form1
