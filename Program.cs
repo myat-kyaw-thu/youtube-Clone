@@ -66,3 +66,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 115: refactor: rename variables in Program for clarity
 
 // micro-commit 119: refactor: extract helper methods in Program
+
+// micro-commit 123: test: cover edge cases in Program
