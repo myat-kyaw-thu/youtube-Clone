@@ -64,3 +64,5 @@ class Test {
 // micro-commit 112: test: add unit tests for Test
 
 // micro-commit 116: refactor: simplify Test logic
+
+// micro-commit 120: fix: handle edge case in Test
