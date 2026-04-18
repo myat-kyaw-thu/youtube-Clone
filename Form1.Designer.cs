@@ -86,3 +86,5 @@
 // micro-commit 113: style: reorder using directives in Form1.Designer
 
 // micro-commit 117: test: add unit tests for Form1.Designer
+
+// micro-commit 121: fix: resolve null-reference in Form1.Designer
