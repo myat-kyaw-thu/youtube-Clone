@@ -64,3 +64,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 110: docs: add usage example for Form1
 
 // micro-commit 114: fix: resolve null-reference in Form1
+
+// micro-commit 118: docs: document Form1 parameters
