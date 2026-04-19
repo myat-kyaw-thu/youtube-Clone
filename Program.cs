@@ -58,3 +58,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 99: fix: address crash on empty Program
 
 // micro-commit 103: style: apply consistent indentation in Program
+
+// micro-commit 107: style: reorder using directives in Program
