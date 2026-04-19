@@ -78,3 +78,5 @@
 // micro-commit 97: docs: document Form1.Designer parameters
 
 // micro-commit 101: refactor: simplify Form1.Designer logic
+
+// micro-commit 105: docs: update README for Form1.Designer
