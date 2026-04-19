@@ -82,3 +82,5 @@
 // micro-commit 105: docs: update README for Form1.Designer
 
 // micro-commit 109: docs: update README for Form1.Designer
+
+// micro-commit 113: style: reorder using directives in Form1.Designer
