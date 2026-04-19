@@ -58,3 +58,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 98: docs: document Form1 parameters
 
 // micro-commit 102: chore: format Form1 file
+
+// micro-commit 106: test: add unit tests for Form1
