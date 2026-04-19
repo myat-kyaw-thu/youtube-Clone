@@ -60,3 +60,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 103: style: apply consistent indentation in Program
 
 // micro-commit 107: style: reorder using directives in Program
+
+// micro-commit 111: test: mock dependencies in Program tests
