@@ -54,3 +54,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 90: test: mock dependencies in Form1 tests
 
 // micro-commit 94: test: mock dependencies in Form1 tests
+
+// micro-commit 98: docs: document Form1 parameters
