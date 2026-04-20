@@ -54,3 +54,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 91: test: mock dependencies in Program tests
 
 // micro-commit 95: fix: address crash on empty Program
+
+// micro-commit 99: fix: address crash on empty Program
