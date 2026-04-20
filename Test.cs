@@ -52,3 +52,5 @@ class Test {
 // micro-commit 88: chore: sync Test with latest template
 
 // micro-commit 92: fix: patch off-by-one error in Test
+
+// micro-commit 96: test: mock dependencies in Test tests
