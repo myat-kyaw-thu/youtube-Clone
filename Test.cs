@@ -56,3 +56,5 @@ class Test {
 // micro-commit 96: test: mock dependencies in Test tests
 
 // micro-commit 100: docs: add XML comments to Test
+
+// micro-commit 104: style: enforce naming conventions in Test
