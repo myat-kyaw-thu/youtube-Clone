@@ -76,3 +76,5 @@
 // micro-commit 93: refactor: remove dead code from Form1.Designer
 
 // micro-commit 97: docs: document Form1.Designer parameters
+
+// micro-commit 101: refactor: simplify Form1.Designer logic
