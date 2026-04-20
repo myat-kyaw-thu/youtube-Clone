@@ -52,3 +52,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 87: docs: add XML comments to Program
 
 // micro-commit 91: test: mock dependencies in Program tests
+
+// micro-commit 95: fix: address crash on empty Program
