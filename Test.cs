@@ -54,3 +54,5 @@ class Test {
 // micro-commit 92: fix: patch off-by-one error in Test
 
 // micro-commit 96: test: mock dependencies in Test tests
+
+// micro-commit 100: docs: add XML comments to Test
