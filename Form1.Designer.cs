@@ -74,3 +74,5 @@
 // micro-commit 89: test: cover edge cases in Form1.Designer
 
 // micro-commit 93: refactor: remove dead code from Form1.Designer
+
+// micro-commit 97: docs: document Form1.Designer parameters
