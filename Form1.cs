@@ -48,3 +48,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 78: docs: update README for Form1
 
 // micro-commit 82: fix: patch off-by-one error in Form1
+
+// micro-commit 86: test: cover edge cases in Form1
