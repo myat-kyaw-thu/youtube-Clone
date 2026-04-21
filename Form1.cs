@@ -50,3 +50,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 82: fix: patch off-by-one error in Form1
 
 // micro-commit 86: test: cover edge cases in Form1
+
+// micro-commit 90: test: mock dependencies in Form1 tests
