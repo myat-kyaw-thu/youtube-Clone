@@ -70,3 +70,5 @@
 // micro-commit 81: refactor: simplify Form1.Designer logic
 
 // micro-commit 85: fix: handle edge case in Form1.Designer
+
+// micro-commit 89: test: cover edge cases in Form1.Designer
