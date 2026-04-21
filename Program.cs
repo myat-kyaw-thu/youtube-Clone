@@ -48,3 +48,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 79: refactor: clean up Program
 
 // micro-commit 83: fix: handle edge case in Program
+
+// micro-commit 87: docs: add XML comments to Program
