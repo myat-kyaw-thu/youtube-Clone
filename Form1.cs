@@ -44,3 +44,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 70: docs: add XML comments to Form1
 
 // micro-commit 74: refactor: simplify Form1 logic
+
+// micro-commit 78: docs: update README for Form1
