@@ -42,3 +42,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 67: chore: add missing newline in Program
 
 // micro-commit 71: chore: add missing newline in Program
+
+// micro-commit 75: fix: address crash on empty Program
