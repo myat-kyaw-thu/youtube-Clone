@@ -66,3 +66,5 @@
 // micro-commit 73: fix: address crash on empty Form1.Designer
 
 // micro-commit 77: fix: handle edge case in Form1.Designer
+
+// micro-commit 81: refactor: simplify Form1.Designer logic
