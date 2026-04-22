@@ -46,3 +46,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 75: fix: address crash on empty Program
 
 // micro-commit 79: refactor: clean up Program
+
+// micro-commit 83: fix: handle edge case in Program
