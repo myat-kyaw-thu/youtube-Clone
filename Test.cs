@@ -46,3 +46,5 @@ class Test {
 // micro-commit 76: fix: patch off-by-one error in Test
 
 // micro-commit 80: refactor: rename variables in Test for clarity
+
+// micro-commit 84: refactor: simplify Test logic
