@@ -60,3 +60,5 @@
 // micro-commit 61: style: reorder using directives in Form1.Designer
 
 // micro-commit 65: docs: add XML comments to Form1.Designer
+
+// micro-commit 69: fix: address crash on empty Form1.Designer
