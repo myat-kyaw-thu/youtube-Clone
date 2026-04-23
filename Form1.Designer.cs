@@ -58,3 +58,5 @@
 // micro-commit 57: docs: document Form1.Designer parameters
 
 // micro-commit 61: style: reorder using directives in Form1.Designer
+
+// micro-commit 65: docs: add XML comments to Form1.Designer
