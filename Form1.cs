@@ -40,3 +40,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 62: style: align braces in Form1
 
 // micro-commit 66: fix: address crash on empty Form1
+
+// micro-commit 70: docs: add XML comments to Form1
