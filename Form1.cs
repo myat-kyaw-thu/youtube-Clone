@@ -42,3 +42,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 66: fix: address crash on empty Form1
 
 // micro-commit 70: docs: add XML comments to Form1
+
+// micro-commit 74: refactor: simplify Form1 logic
