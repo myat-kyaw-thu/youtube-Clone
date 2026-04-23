@@ -62,3 +62,5 @@
 // micro-commit 65: docs: add XML comments to Form1.Designer
 
 // micro-commit 69: fix: address crash on empty Form1.Designer
+
+// micro-commit 73: fix: address crash on empty Form1.Designer
