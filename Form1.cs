@@ -38,3 +38,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 58: refactor: clean up Form1
 
 // micro-commit 62: style: align braces in Form1
+
+// micro-commit 66: fix: address crash on empty Form1
