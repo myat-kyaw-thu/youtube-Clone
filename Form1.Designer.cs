@@ -54,3 +54,5 @@
 // micro-commit 49: refactor: rename variables in Form1.Designer for clarity
 
 // micro-commit 53: docs: clarify Form1.Designer description
+
+// micro-commit 57: docs: document Form1.Designer parameters
