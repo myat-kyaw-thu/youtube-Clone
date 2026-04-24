@@ -32,3 +32,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 47: chore: minor whitespace fix in Program
 
 // micro-commit 51: fix: address crash on empty Program
+
+// micro-commit 55: test: add unit tests for Program
