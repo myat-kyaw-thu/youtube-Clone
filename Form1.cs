@@ -36,3 +36,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 54: style: enforce naming conventions in Form1
 
 // micro-commit 58: refactor: clean up Form1
+
+// micro-commit 62: style: align braces in Form1
