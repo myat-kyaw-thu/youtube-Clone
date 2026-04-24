@@ -56,3 +56,5 @@
 // micro-commit 53: docs: clarify Form1.Designer description
 
 // micro-commit 57: docs: document Form1.Designer parameters
+
+// micro-commit 61: style: reorder using directives in Form1.Designer
