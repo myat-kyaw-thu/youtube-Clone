@@ -34,3 +34,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 50: refactor: rename variables in Form1 for clarity
 
 // micro-commit 54: style: enforce naming conventions in Form1
+
+// micro-commit 58: refactor: clean up Form1
