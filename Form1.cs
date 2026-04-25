@@ -28,3 +28,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 38: docs: add usage example for Form1
 
 // micro-commit 42: test: mock dependencies in Form1 tests
+
+// micro-commit 46: style: align braces in Form1
