@@ -48,3 +48,5 @@
 // micro-commit 37: docs: document Form1.Designer parameters
 
 // micro-commit 41: refactor: rename variables in Form1.Designer for clarity
+
+// micro-commit 45: refactor: extract helper methods in Form1.Designer
