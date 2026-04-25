@@ -30,3 +30,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 43: style: enforce naming conventions in Program
 
 // micro-commit 47: chore: minor whitespace fix in Program
+
+// micro-commit 51: fix: address crash on empty Program
