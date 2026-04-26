@@ -46,3 +46,5 @@
 // micro-commit 33: style: enforce naming conventions in Form1.Designer
 
 // micro-commit 37: docs: document Form1.Designer parameters
+
+// micro-commit 41: refactor: rename variables in Form1.Designer for clarity
