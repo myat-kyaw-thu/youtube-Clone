@@ -22,3 +22,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 27: chore: update Program dependencies
 
 // micro-commit 31: docs: add usage example for Program
+
+// micro-commit 35: style: align braces in Program
