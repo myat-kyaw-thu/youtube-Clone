@@ -22,3 +22,5 @@ class Test {
 // micro-commit 28: docs: clarify Test description
 
 // micro-commit 32: refactor: remove dead code from Test
+
+// micro-commit 36: refactor: simplify Test logic
