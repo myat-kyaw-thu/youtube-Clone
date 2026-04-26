@@ -24,3 +24,5 @@ namespace GreenLifeOrganicStore
 // micro-commit 31: docs: add usage example for Program
 
 // micro-commit 35: style: align braces in Program
+
+// micro-commit 39: refactor: remove dead code from Program
