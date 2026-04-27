@@ -20,3 +20,5 @@ namespace GreenLifeOrganicStore
 }
 
 // micro-commit 27: chore: update Program dependencies
+
+// micro-commit 31: docs: add usage example for Program
