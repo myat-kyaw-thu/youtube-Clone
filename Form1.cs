@@ -20,3 +20,5 @@ namespace GreenLifeOrganicStore
 }
 
 // micro-commit 26: refactor: simplify Form1 logic
+
+// micro-commit 30: fix: resolve null-reference in Form1
