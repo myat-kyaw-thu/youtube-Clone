@@ -1,0 +1,12 @@
+C:\Users\User\source\repos\GreenLifeOrganicStore\obj\Debug\GreenLifeOrganicStore.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\GreenLifeOrganicStore\obj\Debug\GreenLifeOrganicStore.Properties.Resources.resources
+C:\Users\User\source\repos\GreenLifeOrganicStore\obj\Debug\GreenLifeOrganicStore.csproj.GenerateResource.cache
+C:\Users\User\source\repos\GreenLifeOrganicStore\obj\Debug\GreenLifeOrganicStore.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\GreenLifeOrganicStore\bin\Debug\GreenLifeOrganicStore.exe.config
+C:\Users\User\source\repos\GreenLifeOrganicStore\bin\Debug\GreenLifeOrganicStore.exe
+C:\Users\User\source\repos\GreenLifeOrganicStore\bin\Debug\GreenLifeOrganicStore.pdb
+C:\Users\User\source\repos\GreenLifeOrganicStore\bin\Debug\Newtonsoft.Json.dll
+C:\Users\User\source\repos\GreenLifeOrganicStore\bin\Debug\Newtonsoft.Json.xml
+C:\Users\User\source\repos\GreenLifeOrganicStore\obj\Debug\GreenLif.530AEAB3.Up2Date
+C:\Users\User\source\repos\GreenLifeOrganicStore\obj\Debug\GreenLifeOrganicStore.exe
+C:\Users\User\source\repos\GreenLifeOrganicStore\obj\Debug\GreenLifeOrganicStore.pdb
