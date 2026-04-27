@@ -38,3 +38,5 @@
     }
 }
 
+
+// micro-commit 25: test: cover edge cases in Form1.Designer
