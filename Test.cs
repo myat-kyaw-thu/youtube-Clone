@@ -18,3 +18,5 @@ class Test {
         }
     }
 }
+
+// micro-commit 28: docs: clarify Test description
