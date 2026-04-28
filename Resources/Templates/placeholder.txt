@@ -1,0 +1,5 @@
+# Print Templates Folder
+
+Store print templates here for receipts, invoices, and reports.
+
+Templates can be used by PrintService for custom formatting.

@@ -1,0 +1,8 @@
+# Product Images Folder
+
+Place product images here.
+
+Supported formats: .jpg, .jpeg, .png, .gif
+
+Images can be referenced in products.json using the ImageUrl field.
+Example: "ImageUrl": "Images/apple.jpg"
