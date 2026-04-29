@@ -1,0 +1,190 @@
+Course Submission Cover Sheet
+Module: xxx
+Assignment no: 001
+Weighting: 100% of the module mark
+Deadline: 3PM Wednesday the xxth of January 2025
+Module Leader: xx Student ID:
+Please note that there are specific regulations concerning the use of AI and Academic Misconduct. Below are extracts
+from these regulations. By signing, you acknowledge that you have read and understood these extracts.
+(signature:) Date:
+
+This header sheet should be attached to the work you submit.
+Academic Integrity means being honest in your academic work and your studies and making sure that
+you acknowledge the work of others and giving credit where you have used other people&#39;s ideas as
+part of presenting your arguments. Your assessment submissions must therefore always be entirely
+your own work, based on your own learning and appropriately referenced including how you have
+used Generative AI. The University regards the use of Generative AI applications by students to deceive
+to gain unfair advantage as academic misconduct. This usage includes:
+ Plagiarism, where AI tools are used to generate output and ideas that are presented or
+submitted as if they were the student&#39;s own work, without proper citation or references.
+ Where a complete assignment is created using Generative AI and represented as a student&#39;s
+own work, this will be regarded as contract cheating in the same way as commissioning an &#39;Essay
+Mill&#39; or other third party to complete your work. Further information can be found on : Guidance
+on the use of Artificial Intelligence.
+Academic misconduct: The University takes academic misconduct very seriously and seeks at all times
+to rigorously protect its academic standards. Plagiarism, collusion and other forms of cheating
+constitute academic misconduct, for which there is an explicit range of graduated penalties depending
+on the particular type of academic misconduct. The penalties that can be applied if academic
+misconduct is substantiated range from a reprimand to expulsion in very serious cases and for
+repeated instances of misconduct. You are also responsible for ensuring that all work submitted is your
+own and that it is appropriately referenced. The University does not tolerate cheating of any kind. You
+are strongly advised to familiarise yourself with the Academic Misconduct Policy and Procedure
+(Academic Misconduct), which list a range of categories of academic misconduct and associated
+penalties, covering instances of academic misconduct (plagiarism, collusion, exam cheating).
+
+2
+
+Introduction
+This individual coursework requires developing and documenting a small application in C# using an object
+oriented approach and Visual Studio. Your software artefact must be submitted as a Visual Studio project. It
+will be assessed using Visual Studio 2015 or any higher version and any features not working in the standard
+installation of Visual Studio 2015 or any higher version will not be assessed.
+The coursework carries 30% of the module mark.
+Set:
+Submission Deadlines: …
+
+This individual coursework has 2 parts, both of the soft copies which are to be submitted before 11.59pm on
+…..
+(1) The software application to be developed in .NET platform with C#
+(2) The documentation in PDF format.
+
+Please note the rules on plagiarism
+The application should be implemented individually. This is not a group/team effort. Any material which is a
+direct copy from someone else (student or other source) or a close paraphrase/code must be indicated where
+it is quoted i.e., it must be made clear what material is a quotation or close paraphrase e.g. by showing the
+text in italics or in quotation marks. It is not sufficient to show the source in a list of references or
+bibliography. If you are unclear, please discuss your examples with your seminar tutor or the module leader.
+Plagiarism is a serious offence and conviction for plagiarism may lead to suspension from the University, even
+for a first offence (please see the section on Academic Misconduct in the Student Handbook).
+
+3
+
+Software Development Task
+
+GreenLife Organic Store is a rapidly growing retail company that specializes in organic groceries and eco-
+friendly products. They aim to provide high-quality, sustainable products to their customers while maintaining
+excellent service.
+They require a desktop-based management system to handle their operations efficiently. The system should
+cater to both Admin and Customer roles, providing a complete software solution for product management,
+order processing, and reporting.
+Functional Requirements
+
+Admin Features
+• Login – Secure login for admins.
+• Manage Product Details – Add, update, delete product details (name, category, price, stock, supplier).
+• Manage Customer Details – View and update customer information.
+• Manage Orders – View all orders, update order status (Pending, Shipped, Delivered).
+• Generate Reports – Sales report, stock report, and customer order history.
+• Dashboard – Overview of total sales, products in stock, and active orders.
+
+Customer Features
+• Register/Login – New user registration and login.
+• Search Products – Search by name, category, or price range.
+• Place Orders – Add products to cart and place orders.
+• Track Orders – View the status of placed orders.
+• Profile Management – Update personal details.
+
+Additional Features
+• Apply discounts on products.
+• Include product ratings and reviews.
+• Low-stock notifications for Admin.
+• Order history export (CSV or PDF).
+
+4
+
+Technical Requirements
+
+• Programming Language: C# (.NET Framework, Windows Forms Application)
+• Data Storage: Local database (SQL Server or XML/JSON files for simplicity).
+• Software Design:
+o Use classes to represent core entities: Product, Customer, Order, Admin, etc.
+o Implement appropriate properties and methods.
+o Include inheritance or interfaces where suitable.
+• User Interface:
+o Window-based forms for all functionalities.
+o Separate forms for Admin and Customer tasks.
+o Navigation menu/dashboard for easy access.
+• Validation &amp; Exception Handling:
+o Validate user inputs (e.g., numeric fields, empty inputs).
+o Handle exceptions to prevent application crashes.
+• Search Functionality:
+o Implement search algorithms (e.g., linear search, filtering, or sorting) for products.
+o Optional: implement more efficient search methods if desired (e.g., binary search for sorted lists).
+
+Note: Additionally, you may add extra features (data, functionality, and technical) to the application, if you
+wish.
+
+5
+
+Deliverables
+
+Software Project:
+
+• Complete Visual Studio project with source code, compiled classes, executable, and data files.
+
+Reflective Essay (1000+ words):
+• Detailed instructions to run the program.
+• Software architecture: class diagrams, relationships, and sources of code.
+• Description of classes’ properties and methods.
+• Explanation of search algorithms used.
+• Personal reflection on C# and Visual Studio experience, challenges faced, and solutions applied.
+
+6
+
+Deliverables
+
+Your submission should include the software project and a reflective essay as described below.
+1. Your software artefact in the form of a Visual Studio 2015 project, which should include the program’s
+source code, compiled classes, the executable file and data file (if any).
+2. A reflective essay (1000 or more words), which concisely documents:
+a. Detailed instructions to run the program
+b. The architecture of your software in terms of software classes, clearly indicating which classes to be of
+your own work and which classes from other sources (e.g. From textbooks, online sources such as MSDN etc.).
+c. Detailed description of the classes’ properties and methods
+d. Your reflection of own experience of using c# and visual studio for the development task, which
+feature you like and why, what issues you experienced and your solution to overcome it.
+
+
+
+
+Marking Scheme for the CS6004ESIndividual Coursework
+This individual coursework counts for 30% of the module mark. The following are guidelines for marking. Mark each item listed below on a scale 0 to 5 where the marks correspond. Then multiply the mark by the weighting indicated, total and divide by 2 to get the total mark.
+
+Mark	Characterised by
+0	No work or work totally irrelevant
+1	Work started on right lines but no result
+2	Some result, with major lack and/or errors
+3	Acceptable result but incomplete, or some good result with minor errors
+4	Good result but can be further polished
+5	Excellent result
+
+
+	Item	Weight	Mar to 5)	Weight x Mark
+Implementation			
+1	The application UI Design	2	5	10
+2	Task1: Customer, Admin Login 	2	5	10
+3	Task2: Customer Registration	2	5	10
+4	Task3: Admin: Manage Products	3	5	15
+5	Task4: Admin: Manage Customer Details	2	5	10
+6	Task5: Admin: Manage Orders	3	5	15
+7	Task6: Customer: Search Products	3	5	15
+8	Task7: Customer: Place Orders	2	5	10
+9	Task8: Customer: Track Orders	2	5	10
+10	Task9: Admin: Generate Reports	2	    5	10
+11	Task10:Admin Dashboard	2	5	10
+Documentation			
+1	Detailed instructions to run the program	2	10	10
+2	The software architecture	2	5	10
+4	Detailed description of the classes’ properties and methods	2	5	10
+ 
+5	Explanation about search  algorithms used in the project	2	5	10
+6	Own reflection of own experience	2	5	10
+Programming style			
+1	Clarity of code which shows the underlying algorithm	1	5	5
+2	Sensible naming of programmer-defined variables, classes, properties and methods	1	5	5
+3	Useful comments in code	1	5	5
+4	Data validation and exception handling	1	5	5
+5	Interface design and usability of the system	1	5	5
+	Total			200
+
+
