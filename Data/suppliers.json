@@ -1,0 +1,64 @@
+{
+  "suppliers": [
+    {
+      "Id": "sup-001",
+      "Name": "Green Valley Farms",
+      "ContactPerson": "Mike Johnson",
+      "Email": "mike@greenvalleyfarms.com",
+      "Phone": "555-111-2222",
+      "Address": "100 Farm Road, Green Valley, GV 12340",
+      "Website": "www.greenvalleyfarms.com",
+      "IsActive": true,
+      "DateAdded": "2023-06-01T00:00:00",
+      "Notes": "Primary supplier for fruits"
+    },
+    {
+      "Id": "sup-002",
+      "Name": "Organic Gardens Co",
+      "ContactPerson": "Sarah Williams",
+      "Email": "sarah@organicgardens.com",
+      "Phone": "555-222-3333",
+      "Address": "200 Garden Street, Plant City, PC 12341",
+      "Website": "www.organicgardens.com",
+      "IsActive": true,
+      "DateAdded": "2023-06-15T00:00:00",
+      "Notes": "Primary supplier for vegetables"
+    },
+    {
+      "Id": "sup-003",
+      "Name": "Happy Cow Dairy",
+      "ContactPerson": "Tom Brown",
+      "Email": "tom@happycowdairy.com",
+      "Phone": "555-333-4444",
+      "Address": "300 Dairy Lane, Milk Town, MT 12342",
+      "Website": "www.happycowdairy.com",
+      "IsActive": true,
+      "DateAdded": "2023-07-01T00:00:00",
+      "Notes": "Dairy products supplier"
+    },
+    {
+      "Id": "sup-004",
+      "Name": "Golden Bee Apiaries",
+      "ContactPerson": "Lisa Gold",
+      "Email": "lisa@goldenbee.com",
+      "Phone": "555-444-5555",
+      "Address": "400 Honeycomb Ave, Bee City, BC 12343",
+      "Website": "www.goldenbee.com",
+      "IsActive": true,
+      "DateAdded": "2023-07-15T00:00:00",
+      "Notes": "Honey and oils supplier"
+    },
+    {
+      "Id": "sup-005",
+      "Name": "Mountain Harvest",
+      "ContactPerson": "David Stone",
+      "Email": "david@mountainharvest.com",
+      "Phone": "555-555-6666",
+      "Address": "500 Mountain View, Peak Town, PT 12344",
+      "Website": "www.mountainharvest.com",
+      "IsActive": true,
+      "DateAdded": "2023-08-01T00:00:00",
+      "Notes": "Nuts and beverages supplier"
+    }
+  ]
+}
